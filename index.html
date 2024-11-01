@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADDVINGS - Exhibition Stand Builders</title>
+    <link rel="stylesheet" href="styles.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-144904961-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-144904961-1');
+    </script>
+</head>
+<body>
+
+<!-- Placeholder for header -->
+<div id="header"></div> 
+
+<section class="hero">
+    <video autoplay muted loop class="hero-video">
+        <source src="images/vid.mp4" type="video/mp4">
+    </video>
+    <div class="hero-content">
+        <h1>ADDVINGS EXHIBITION AND EVENT SERVICES</h1>
+        <p>Transforming Ideas into Stunning Displays</p>
+        <a href="contact.html" class="btn">Get in Touch</a>
+    </div>
+</section>
+
+<section class="about">
+    <h2>About Us</h2>
+    <p class="hero-description">
+        At ADDVINGS, we specialize in crafting custom exhibition stand designs that not only reflect your brand's identity but also engage your audience effectively. Our skilled team works closely with you to understand your vision and requirements, ensuring that every detail is meticulously planned and executed. From the initial concept and fabrication to the final assembly, we use high-quality materials and innovative techniques to create stands that are both visually stunning and functional. Additionally, our comprehensive event management services encompass everything from logistics to on-site support, allowing you to focus on your goals while we handle the complexities of your exhibition. With our expertise and commitment to excellence, we ensure your brand stands out in a competitive environment, leaving a lasting impression on your target audience.
+    </p>
+</section>
+
+<section class="services">
+    <h2>Our Services</h2>
+    <div class="services-grid">
+        <div class="service-item">Custom Stand Design</div>
+        <div class="service-item">Stand Fabrication</div>
+        <div class="service-item">Event Planning</div>
+        <div class="service-item">Dismantling & Storage</div>
+    </div>
+</section>
+
+<section class="gallery">
+    <h2>Gallery</h2>
+    <div class="gallery-grid">
+        <img src="images/gallery1.png" alt="Stand 1">
+        <img src="images/gallery2.png" alt="Stand 2">
+        <img src="images/gallery3.png" alt="Stand 3">
+    </div>
+</section>
+
+<!-- Placeholder for footer -->
+<div id="footer"></div> 
+
+<script>
+    // Load header and footer using fetch
+    async function loadContent() {
+        const headerResponse = await fetch("header.html");
+        const footerResponse = await fetch("footer.html");
+        document.getElementById("header").innerHTML = await headerResponse.text();
+        document.getElementById("footer").innerHTML = await footerResponse.text();
+    }
+    loadContent();
+
+    // JavaScript for scroll-triggered animation
+    window.addEventListener("scroll", function () {
+        const aboutSection = document.querySelector(".about");
+        const sectionTop = aboutSection.getBoundingClientRect().top;
+        const triggerPoint = window.innerHeight - 100;
+    
+        if (sectionTop < triggerPoint) {
+            aboutSection.classList.add("fade-in");
+        } else {
+            aboutSection.classList.remove("fade-in");
+        }
+    });
+</script>
+
+</body>
+</html>
