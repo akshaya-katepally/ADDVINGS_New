@@ -22,7 +22,7 @@ body {
     justify-content: center;
     height: 550px;
     background-size: 200% 200%; /* For smoother animation */
-    animation: gradientAnimation 10s ease infinite; /* Change duration to 10 seconds */
+    animation: gradientAnimation 15s ease infinite; /* Change duration to 10 seconds */
 }
 
 @keyframes gradientAnimation {

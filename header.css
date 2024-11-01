@@ -45,7 +45,7 @@ body {
 
 /* Logo styling */
 .logo img {
-  height: 50px;
+  height: 40px;
   transition: height 0.3s; /* Smooth transition for logo size */
 }
 
@@ -59,13 +59,13 @@ body {
 .navbar ul {
   list-style: none;
   display: flex;
-  gap: 20px;
+  gap: 40px;
   margin: 0;
 
 }
 
 .navbar a {
-  color: #f8f8f7; /* Light text for the navbar */
+  color: #ffffff; /* Light text for the navbar */
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s;
