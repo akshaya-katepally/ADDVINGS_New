@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services - ADDVINGS</title>
+    <link rel="stylesheet" href="services.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome -->
+</head>
+<body>
+
+<div id="header"></div> <!-- Placeholder for header -->
+
+<section class="hero">
+    <div class="hero-content">
+        <h1>Our Services</h1>
+        <p>We bring your vision to life with our comprehensive design and event management services.</p>
+    </div>
+</section>
+
+<section class="services">
+    <div class="service">
+        <i class="fas fa-cube"></i>
+        <h3>3D Exhibition Stall Design</h3>
+        <p>Creating stunning 3D models for your exhibition needs, tailored to your brand's aesthetics.</p>
+    </div>
+    <div class="service">
+        <i class="fas fa-store"></i>
+        <h3>Retail Kiosk Design</h3>
+        <p>Innovative kiosk designs to maximize your retail space and engage customers effectively.</p>
+    </div>
+    <div class="service">
+        <i class="fas fa-paint-roller"></i>
+        <h3>Exhibition Stall Design</h3>
+        <p>Customized stall designs to stand out in any exhibition, ensuring impactful brand presence.</p>
+    </div>
+    <div class="service">
+        <i class="fas fa-shapes"></i>
+        <h3>Display Stands Design</h3>
+        <p>High-quality display stands that showcase your products beautifully and attractively.</p>
+    </div>
+    <div class="service">
+        <i class="fas fa-chalkboard-teacher"></i>
+        <h3>Presentation Design</h3>
+        <p>Engaging and visually appealing presentations that capture your audience's attention.</p>
+    </div>
+    <div class="service">
+        <i class="fas fa-bullhorn"></i>
+        <h3>Strategic Branding Consultancy</h3>
+        <p>Strategic branding solutions to help your business make a memorable impact.</p>
+    </div>
+    <div class="service">
+        <i class="fas fa-archway"></i>
+        <h3>Custom Exhibition Stands</h3>
+        <p>Unique exhibition stands designed and built to perfectly reflect your brand identity.</p>
+    </div>
+    <div class="service">
+        <i class="fas fa-hammer"></i>
+        <h3>Builders</h3>
+        <p>Expert builders to bring your stall and event setup designs to life seamlessly.</p>
+    </div>
+</section>
+
+<div id="footer"></div> <!-- Placeholder for footer -->
+
+<script>
+    async function loadContent() {
+        const headerResponse = await fetch("header.html");
+        const footerResponse = await fetch("footer.html");
+        document.getElementById("header").innerHTML = await headerResponse.text();
+        document.getElementById("footer").innerHTML = await footerResponse.text();
+    }
+    loadContent();
+</script>
+
+</body>
+</html>
