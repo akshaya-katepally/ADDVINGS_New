@@ -14,14 +14,24 @@ body {
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(to right, #d2302c, #cf7832); /* Keep same as main page */
-    color: #f8f8f7;
-    text-align: center;
-    padding: 20px 20px;
+    position: relative; /* Ensure hero section positions correctly */
+    overflow: hidden; /* Prevent overflow of video */
+    height: 75vh; /* Set height to match your design */
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 250px;
+}
+
+.video-background {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1; /* Place video behind other content */
+    transform: translate(-50%, -50%); /* Center video */
 }
 
 .hero-content {
@@ -30,6 +40,9 @@ body {
     gap: 10px;
     max-width: 800px;
     margin: 0 auto;
+    z-index: 1; /* Ensure content appears above the video */
+    text-align: center;
+    color: #f8f8f7; /* Light text color */
 }
 
 .hero h1 {
@@ -82,7 +95,6 @@ body {
     font-size: 2em; /* Adjust icon size */
     color: #cf7832; /* Color for icons */
 }
-
 
 /* "Get in Touch" Heading */
 .get_in_touch {
