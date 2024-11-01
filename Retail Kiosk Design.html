@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - ADDVINGS</title>
+    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="styles.css"> <!-- Included the second CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome -->
+    <script src="contact.js" defer></script>
+</head>
+<body>
+
+    <header class="header">
+        <div class="logo">
+            <a href="index.html"><img src="images/logo.png" alt="ADDVINGS"></a>
+        </div>
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Kiosk Design Services for Outdoor, Office, Retail & Mall Kiosk Design<h1>
+            <p>Get in touch with us for any queries or support.</p>
+        </div>
+    </section>
+          
+
+    <!-- Info Boxes Section -->
+    <section class="info_boxes">
+        <div class="info_box" onclick="window.location.href='contact.html'">
+            <h3><i class="fas fa-phone"></i> Contact Us</h3>
+            <p><a href="tel:9948787222">+91 99487 87222</a></p>
+        </div>
+        <div class="info_box" onclick="window.location.href='mailto:info.addvings@gmail.com'">
+            <h3><i class="fas fa-envelope"></i> Email Us At</h3>
+            <p><a href="mailto:info.addvings@gmail.com">info.addvings@gmail.com</a></p>
+        </div>
+        <div class="info_box" onclick="window.location.href='office-location.html'">
+            <h3><i class="fas fa-map-marker-alt"></i> Our Office</h3>
+            <p>Reg: 20-122/4, Aishwarya Homes,<br>Dayanand Nagar, Malkajgiri,<br>Hyderabad- 500047, Telangana</p>
+        </div>
+    </section>
+
+    <div class="social-icons">
+        <a href="https://facebook.com" target="_blank" class="social-icon facebook">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://instagram.com/addvingsglobal" target="_blank" class="social-icon instagram">
+            <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://linkedin.com" target="_blank" class="social-icon linkedin">
+            <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a href="https://youtube.com" target="_blank" class="social-icon youtube">
+            <i class="fab fa-youtube"></i>
+        </a>
+    </div>
+    
+
+    <!-- "Get in Touch" Heading -->
+    <h2 class="get_in_touch">Get in Touch</h2>
+
+    <!-- Contact Form Section -->
+    <section class="contact_form">
+        <h2>How Can We Help You?</h2> <!-- Main header for contact section -->
+        <form onsubmit="return validateForm()">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" placeholder="Your Name" required>
+
+            <label for="contact">Your Contact</label>
+            <input type="text" id="contact" placeholder="Your Contact" required>
+
+            <label for="email">Your Email</label>
+            <input type="email" id="email" placeholder="Your Email" required>
+
+            <label for="subject">Your Subject</label>
+            <input type="text" id="subject" placeholder="Subject" required>
+
+            <label for="message">Your Message (optional)</label>
+            <textarea id="message" placeholder="Your Message" required></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+
+    <footer>
+        <div class="footer_content">
+            <div class="about_section">
+                <p>ADD VINGS Global is a leading exhibition stand builder in Dubai, specializing in custom designs and event solutions. 
+                   We take pride in delivering exceptional craftsmanship and seamless project management for businesses worldwide.</p>
+                <div class="contact_links">
+                    <p><strong>Email:</strong> info.addvings@gmail.com</p>
+                    <p><strong>Phone:</strong> +91 99487 87222 </p>
+                    <p><strong>Address:</strong> Dubai, UAE</p>
+                </div>
+            </div>
+    
+            <div class="clients_section">
+                <h3>Our Clients</h3>
+                <div class="logo_scroller">
+                    <div class="logo_track">
+                        <img src="images/client1.png" alt="Client 1">
+                        <img src="images/client2.png" alt="Client 2">
+                        <img src="images/client3.png" alt="Client 3">
+                        <img src="images/client4.png" alt="Client 4">
+                        <img src="images/client5.png" alt="Client 5">
+                        <img src="images/client6.png" alt="Client 6">
+                        <img src="images/client7.png" alt="Client 7">
+                        <img src="images/client8.png" alt="Client 8">
+                        <img src="images/client9.png" alt="Client 9">
+                        <img src="images/client10.png" alt="Client 10">
+                    </div>
+                </div>
+            </div>
+    
+            <div class="social_icons">
+                <a href="https://facebook.com"><img src="images/facebook.png" alt="Facebook"></a>
+                <a href="https://linkedin.com"><img src="images/linkedin.png" alt="LinkedIn"></a>
+                <a href="https://youtube.com"><img src="images/youtube.png" alt="YouTube"></a>
+            </div>
+        </div>
+        <p>&copy; 2024 ADDVINGS. All rights reserved.</p> <!-- Added footer from the second code -->
+    </footer>
+
+</body>
+</html>

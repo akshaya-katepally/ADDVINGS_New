@@ -1,0 +1,268 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f4;
+    color: #100103;
+    line-height: 1.6;
+}
+
+/* Header */
+.header {
+    background-color: #563434;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    height: 50px;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar a {
+    color: #f8f8f7;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.navbar a:hover {
+    color: #cf7832;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(to right, #d2302c, #cf7832);
+    color: #f8f8f7;
+    text-align: center;
+    padding: 50px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    gap: 10px; /* Adds spacing between elements */
+}
+
+.hero h1 {
+    font-size: 3em;
+    margin: 0; /* Ensure no extra margin */
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin: 0; /* Ensure no extra margin */
+}
+
+
+/* Info Boxes and Social Media Boxes: Consistent Styles */
+.info_boxes,
+.social-media-boxes {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 40px 0;
+}
+
+.info_box,
+.social-box {
+    background-color: #fff;
+    border-radius: 10px;
+    width: 300px;
+    height: 180px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.info_box:hover,
+.social-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.info_box h3,
+.social-box h3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.info_box i {
+    margin-right: 10px;
+    color: #cf7832;
+    font-size: 1.5em;
+}
+
+/* Help Section */
+.help-section {
+    padding: 40px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    margin: 20px auto;
+    max-width: 1200px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* "Get in Touch" Heading */
+.get_in_touch {
+    text-align: center;
+    font-size: 2.5em;
+    font-weight: bold;
+    margin: 20px 0;
+    color: #333;
+}
+
+/* Social Icons Section */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding: 20px;
+}
+
+.social-icon {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 2rem;
+    color: white;
+    background-color: #333;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+.social-icon i {
+    transition: transform 0.3s;
+}
+
+/* Individual Colors for Platforms */
+.facebook {
+    background-color: #3b5998;
+}
+.instagram {
+    background: radial-gradient(circle at 30% 30%, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
+}
+.linkedin {
+    background-color: #0077b5;
+}
+.youtube {
+    background-color: #ff0000;
+}
+
+/* Hover Effect */
+.social-icon:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.social-icon:hover i {
+    transform: rotate(10deg);
+}
+
+/* Animation: Bounce Effect */
+.social-icon {
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+
+/* Contact Form */
+.contact_form {
+    max-width: 600px;
+    margin: 40px auto;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact_form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.contact_form input,
+.contact_form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.contact_form button {
+    background-color: #333;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.contact_form button:hover {
+    background-color: #555;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 40px;
+    text-align: center;
+}
+
+.footer_content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 20px;
+}
+
+.clients_section img {
+    height: 60px;
+    margin: 0 15px;
+}
+
+.social_icons img {
+    width: 30px;
+    height: 30px;
+    margin: 0 5px;
+}
