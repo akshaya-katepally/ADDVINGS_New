@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Footer</title>
+    <link rel="stylesheet" href="footer.css"> <!-- Link to footer.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome -->
+    <style>
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        .footer_content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            width: 100%;
+            max-width: 1200px;
+            gap: 40px;
+        }
+        /* About Section */
+        .about_section {
+            flex: 1;
+            min-width: 300px;
+        }
+        .contact_links p {
+            margin: 5px 0;
+        }
+        /* Clients Section with Scrolling Logos */
+        .clients_section {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+        }
+        .logo_scroller {
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+            margin-top: 10px;
+            height: 80px;
+        }
+        .logo_track {
+            display: flex;
+            gap: 30px;
+            animation: scroll 20s linear infinite; /* Adjust the duration as needed */
+            width: fit-content;
+        }
+        .logo_track img {
+            height: 60px;
+            width: auto;
+            object-fit: contain;
+        }
+        /* Scrolling Animation */
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%); /* Adjust based on total width */
+            }
+        }
+        /* Social Icons Section */
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            padding: 20px;
+        }
+        .social-icon {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            font-size: 2rem;
+            color: white;
+            transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+        /* Individual Colors for Platforms */
+        .facebook {
+            background-color: #3b5998;
+        }
+        .instagram {
+            background: radial-gradient(circle at 30% 30%, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
+        }
+        .linkedin {
+            background-color: #0077b5;
+        }
+        .youtube {
+            background-color: #ff0000;
+        }
+        /* Hover Effect */
+        .social-icon:hover {
+            transform: scale(1.1);
+            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+        }
+        .social-icon:hover i {
+            transform: rotate(10deg);
+        }
+        /* Animation: Bounce Effect */
+        .social-icon {
+            animation: bounce 2s infinite;
+        }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+    </style>
+</head>
+<body>
+
+<footer>
+    <div class="footer_content">
+        <div class="about_section">
+            <p>ADDVINGS Global is a leading exhibition stand builder in Dubai, specializing in custom designs and event solutions. 
+               We take pride in delivering exceptional craftsmanship and seamless project management for businesses worldwide.</p>
+            <div class="contact_links">
+                <p><strong>Email:</strong> info.addvings@gmail.com</p>
+                <p><strong>Phone:</strong> +91 99487 87222</p>
+                <p><strong>Address:</strong> Dubai, UAE</p>
+            </div>
+        </div>
+
+        <div class="clients_section">
+            <h3>Our Clients</h3>
+            <div class="logo_scroller">
+                <div class="logo_track">
+                    <img src="images/client1.png" alt="Client 1">
+                    <img src="images/client2.png" alt="Client 2">
+                    <img src="images/client3.png" alt="Client 3">
+                    <img src="images/client4.png" alt="Client 4">
+                    <img src="images/client5.png" alt="Client 5">
+                    <img src="images/client6.png" alt="Client 6">
+                    <img src="images/client7.png" alt="Client 7">
+                    <img src="images/client8.png" alt="Client 8">
+                    <img src="images/client9.png" alt="Client 9">
+                    <img src="images/client10.png" alt="Client 10">
+                    <!-- Duplicating the images -->
+                    <img src="images/client1.png" alt="Client 1">
+                    <img src="images/client2.png" alt="Client 2">
+                    <img src="images/client3.png" alt="Client 3">
+                    <img src="images/client4.png" alt="Client 4">
+                    <img src="images/client5.png" alt="Client 5">
+                    <img src="images/client6.png" alt="Client 6">
+                    <img src="images/client7.png" alt="Client 7">
+                    <img src="images/client8.png" alt="Client 8">
+                    <img src="images/client9.png" alt="Client 9">
+                    <img src="images/client10.png" alt="Client 10">
+                </div>
+            </div>
+        </div>
+
+        <div class="Socials">
+            <h3>Our Socials</h3>
+        <div class="social-icons">
+            <a href="https://facebook.com" target="_blank" class="social-icon facebook">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://instagram.com/addvingsglobal" target="_blank" class="social-icon instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://linkedin.com" target="_blank" class="social-icon linkedin">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://youtube.com" target="_blank" class="social-icon youtube">
+                <i class="fab fa-youtube"></i>
+            </a>
+        </div>
+    </div>
+</div>
+</footer>
+
+</body>
+</html>

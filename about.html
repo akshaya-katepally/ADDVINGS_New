@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADDVINGS - About Us</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- Placeholder for header -->
+<div id="header"></div> 
+
+<!-- Hero Section -->
+<section class="hero">
+    <div class="hero-content">
+        <h1>About Us</h1>
+    </div>
+</section>
+
+<!-- About Us Content Section -->
+<section class="about-us">
+    <h2 class="about-heading">Welcome to JAI JAAI VANTI</h2>
+    
+    <div class="content-wrapper">
+        <!-- Text Content -->
+        <div class="text-content">
+            <p>It started with a dream, an ambition, and a determination to build better customer experiences. A vision to fulfill or a righteous path to emulate both our clients and team members. (Road to) progress for JAI JAAI VANTI.</p>
+            
+            <p>The parental organization formally known as VIKASH TECHNICAL SERVICES LLC was framed in 2008. The company was catering to the needs of freelancers. To increase its share of the ever-growing market, it teamed up with JAI JAAI VANTI to give its valued customers value for money.</p>
+            
+            <p>We were built with a strong foundation of team members and happy customers. It has always been a distant reality, and once one milestone is achieved, there is always another one waiting to be crossed. Almost instantly, JAI JAAI VANTI became a prominent name in its business segment, but as every entrepreneur sticks to their dream, we always wanted to push our company to more prosperous milestones. More than being a global player, we always perceived our company as a unit that could make a difference with its quality and competitively priced products.</p>
+            
+            <p>Taking a path less traveled, we expanded JAI JAAI VANTI with total in-house production, a highly sensitive business that requires a high amount of technical know-how, expertise, and specialized knowledge. The story was not always a fairy tale. We had several bumps along the journey. On every single story, our team and their dedication are what helped us to achieve the next milestone. These people made sacrifices along the way.</p>
+        </div>
+        
+        <!-- Image Content -->
+        <div class="image-content">
+            <img src="images/gallery15.png" alt="Our Work Showcase">
+        </div>
+    </div>
+</section>
+
+<!-- What Makes Us Section -->
+<h2 class="hero-description">What Makes Us Different From Others</h2>
+<h3 class="passion-heading">Combining Our Passion & Conviction For Brands That Deserve The Best</h3>
+<section class="what-makes-us"> 
+    <p class="hero-description">
+        What makes Team Jai Jaai Vanti Different from others is the fact that we offer both pre-designed as well as custom exhibit solutions that will be fabricated to meet the unique requirements of your business. We specialize in building custom-made stands and tailor each stand to our client’s individual specifications and exhibiting needs. Our team of experts who has extensive knowledge and experience in the field, we’ll make sure that your Ideas will turn into Reality.
+
+        Delivering services on this scale requires a supportive team and effective partnerships. Benefiting from our network of experienced professionals, Roof Line Branding Services combines design expertise with outstanding project management. A testimony to this is our impressive track record of more than twenty years in a very challenging business environment.
+
+        Your brand is your most valuable intangible asset. In today’s market, every company desire to project and transform its brand’s experience into a measurable result. As per branding design consultancy, we align business strategies to communication objectives in order to ensure strong brand value and generation return. We work passionately to forge your brand, enforce its strengths, and guarantee its continued impact. 
+    </p> 
+</section>
+
+<!-- Placeholder for footer -->
+<div id="footer"></div> 
+
+<script>
+    // Load header and footer using fetch
+    async function loadContent() {
+        const headerResponse = await fetch("header.html");
+        const footerResponse = await fetch("footer.html");
+        document.getElementById("header").innerHTML = await headerResponse.text();
+        document.getElementById("footer").innerHTML = await footerResponse.text();
+    }
+    loadContent();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADDVINGS - Gallery</title>
+    <link rel="stylesheet" href="gallery.css">
+</head>
+<body>
+
+<!-- Placeholder for header -->
+<div id="header"></div>
+
+<section class="hero">
+    <div class="hero-content">
+        <h1>Welcome to Our Gallery</h1>
+        <p>Discover our beautifully designed exhibition stands and displays.</p>
+    </div>
+</section>
+
+<div class="about-section">
+    <div class="content-wrapper">
+        <div class="text-content">
+            <h2>What Makes Us Different From Others</h2>
+            <p>Here are a Few Glimpses of Our Proudly Done Work. We have worked for the last decade on Designing & 3D exhibition stand Construction, Office Interiors Display stands, and Kiosks for various Expo presentations. We deeply examine each client’s brief, their budget, and try to satisfy their requirements with our brilliant ideas. We always make a detailed stand design for our clients, so that it is very easy for them to understand and make decisions fast and easier.</p>
+        </div>
+        <div class="image-content">
+            <img src="images/gallery9.png" alt="Our Work Showcase">
+        </div>
+    </div>
+</div>
+
+<section class="gallery-section">
+    <h2>Our Gallery</h2>
+    <div class="gallery-grid">
+        <img src="images/gallery1.png" alt="Gallery image 1">
+        <img src="images/gallery2.png" alt="Gallery image 2">
+        <img src="images/gallery3.png" alt="Gallery image 3">
+        <img src="images/gallery4.png" alt="Gallery image 4">
+        <img src="images/gallery5.png" alt="Gallery image 5">
+        <img src="images/gallery6.png" alt="Gallery image 6">
+        <img src="images/gallery7.png" alt="Gallery image 7">
+        <img src="images/gallery8.png" alt="Gallery image 8">
+        <img src="images/gallery9.png" alt="Gallery image 9">
+        <img src="images/gallery10.png" alt="Gallery image 10">
+        <img src="images/gallery11.png" alt="Gallery image 11">
+        <img src="images/gallery12.png" alt="Gallery image 12">
+        <img src="images/gallery13.png" alt="Gallery image 13">
+        <img src="images/gallery14.png" alt="Gallery image 14">
+        <img src="images/gallery15.png" alt="Gallery image 15">
+        <img src="images/gallery16.png" alt="Gallery image 16">
+        <img src="images/gallery17.png" alt="Gallery image 17">
+        <img src="images/gallery18.png" alt="Gallery image 18">
+        <img src="images/gallery19.png" alt="Gallery image 19">
+        <img src="images/gallery20.png" alt="Gallery image 20">
+    </div>
+</section>
+
+<!-- Placeholder for footer -->
+<div id="footer"></div> 
+
+<script>
+    async function loadContent() {
+        const headerResponse = await fetch("header.html");
+        const footerResponse = await fetch("footer.html");
+        document.getElementById("header").innerHTML = await headerResponse.text();
+        document.getElementById("footer").innerHTML = await footerResponse.text();
+    }
+    loadContent();
+</script>
+
+</body>
+</html>
+

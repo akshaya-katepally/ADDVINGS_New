@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - ADDVINGS</title>
+    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome -->
+    <script src="contact.js" defer></script>
+</head>
+<body>
+
+<div id="header"></div> <!-- Placeholder for header -->
+
+<section class="hero">
+    <div class="hero-content">
+        <h1>How Can We Help You?</h1>
+        <p>Get in touch with us for any queries or support.</p>
+    </div>
+</section>
+
+<section class="info_boxes">
+    <div class="info_box" onclick="window.location.href='contact.html'">
+        <h3><i class="fas fa-phone"></i></h3> <!-- Icon moved above heading -->
+        <h3>Contact Us</h3> <!-- Heading -->
+        <p><a href="tel:9948787222">+91 99487 87222</a></p> <!-- Content -->
+    </div>
+    <div class="info_box" onclick="window.location.href='mailto:info.addvings@gmail.com'">
+        <h3><i class="fas fa-envelope"></i></h3> <!-- Icon moved above heading -->
+        <h3>Email Us At</h3> <!-- Heading -->
+        <p><a href="mailto:info.addvings@gmail.com">info.addvings@gmail.com</a></p> <!-- Content -->
+    </div>
+    <div class="info_box" onclick="window.location.href='office-location.html'">
+        <h3><i class="fas fa-map-marker-alt"></i></h3> <!-- Icon moved above heading -->
+        <h3>Our Office</h3> <!-- Heading -->
+        <p>Reg: 20-122/4, Aishwarya Homes,<br>Dayanand Nagar, Malkajgiri,<br>Hyderabad- 500047, Telangana</p> <!-- Content -->
+    </div>
+</section>
+
+
+<div class="social-icons">
+    <a href="https://facebook.com" target="_blank" class="social-icon facebook"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://instagram.com/addvingsglobal" target="_blank" class="social-icon instagram"><i class="fab fa-instagram"></i></a>
+    <a href="https://linkedin.com" target="_blank" class="social-icon linkedin"><i class="fab fa-linkedin-in"></i></a>
+    <a href="https://youtube.com" target="_blank" class="social-icon youtube"><i class="fab fa-youtube"></i></a>
+</div>
+
+<!-- Contact Form Section -->
+<section class="contact_form">
+    <h2 class="get_in_touch">Get in Touch</h2> <!-- Heading inside the form box -->
+    <form onsubmit="return validateForm()">
+        <label for="name">Your Name</label>
+        <input type="text" id="name" placeholder="Your Name" required>
+
+        <label for="contact">Your Contact</label>
+        <input type="text" id="contact" placeholder="Your Contact" required>
+
+        <label for="email">Your Email</label>
+        <input type="email" id="email" placeholder="Your Email" required>
+
+        <label for="subject">Your Subject</label>
+        <input type="text" id="subject" placeholder="Subject" required>
+
+        <label for="message">Your Message (optional)</label>
+        <textarea id="message" placeholder="Your Message" required></textarea>
+
+        <button type="submit">Submit</button>
+    </form>
+</section>
+
+
+<div id="footer"></div> <!-- Placeholder for footer -->
+
+<script>
+    async function loadContent() {
+        const headerResponse = await fetch("header.html");
+        const footerResponse = await fetch("footer.html");
+        document.getElementById("header").innerHTML = await headerResponse.text();
+        document.getElementById("footer").innerHTML = await footerResponse.text();
+    }
+    loadContent();
+</script>
+
+</body>
+</html>
