@@ -8,19 +8,27 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #000000; /* Black background */
-    color: #f8f8f7;
+    color: #f8f8f7; /* Light text color */
 }
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(to right, #d2302c, #cf7832);
-    color: #f8f8f7;
+    background: linear-gradient(to right, #790505, #f89a02); /* Deep red to vibrant orange */
+    color: #ffffff; /* White text */
     text-align: center;
     padding: 20px 20px;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 250px;
+    height: 550px;
+    background-size: 200% 200%; /* For smoother animation */
+    animation: gradientAnimation 10s ease infinite; /* Change duration to 10 seconds */
+}
+
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 .hero-content {
@@ -33,6 +41,7 @@ body {
 
 .hero h1 {
     font-size: 2.5em;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6); /* Adds depth to the text */
 }
 
 .hero p {
@@ -99,13 +108,13 @@ body {
     }
 }
 
-
 /* Gallery Section */
 .gallery-section {
     padding: 20px;
     text-align: center;
     background-color: #000000;
 }
+
 
 .gallery-section h2 {
     font-size: 1.5em;
