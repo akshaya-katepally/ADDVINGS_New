@@ -1,108 +1,88 @@
-.header {
-    background-color: #563434; /* Primary dark color */
-    padding: 20px 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-      .dropdown {
-    position: relative;
-  }
-  
-  .dropdown-menu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: #e76e0c;
-    width: 250px; /* Fixed width */
-    border-radius: 5px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-  }
-  
-  .dropdown-menu li {
-    width: 100%; /* Full width */
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Divider between items */
-  }
-  
-  .dropdown-menu li:last-child {
-    border-bottom: none; /* No border for the last item */
-  }
-  
-  .dropdown-menu a {
-    display: block;
-    padding: 15px;
-    color: white;
-    text-align: center;
-    transition: background-color 0.3s;
-  }
-  
-  .dropdown-menu a:hover {
-    background-color: #381904;
-  }
-  
-  /* Display Dropdown on Hover */
-  .dropdown:hover .dropdown-menu {
-    display: block;
-  }
+/* Reset styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-.dropdown {
-    position: relative;
-  }
-  
-  .dropdown-menu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: #e76e0c;
-    width: 250px; /* Fixed width */
-    border-radius: 5px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-  }
-  
-  .dropdown-menu li {
-    width: 100%; /* Full width */
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Divider between items */
-  }
-  
-  .dropdown-menu li:last-child {
-    border-bottom: none; /* No border for the last item */
-  }
-  
-  .dropdown-menu a {
-    display: block;
-    padding: 15px;
-    color: white;
-    text-align: center;
-    transition: background-color 0.3s;
-  }
-  
-  .dropdown-menu a:hover {
-    background-color: #381904;
-  }
-  
-  /* Display Dropdown on Hover */
-  .dropdown:hover .dropdown-menu {
-    display: block;
-  }
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+/* Initial styles for the navbar */
+.header {
+  position: fixed; /* Make the navbar stay at the top */
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: transparent; /* Transparent background initially */
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s, padding 0.3s;
+  box-shadow: none; /* Remove shadow initially */
+  z-index: 1000; /* Ensure the navbar stays on top */
+}
+
+/* Styles for the navbar when scrolled */
+.header-scrolled {
+  background-color: #563434; /* Dark color when scrolled */
+  padding: 10px 40px; /* Reduce padding */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Add shadow */
+}
+
+.header.header-scrolled {
+  background-color: #563434 !important; /* Ensure color applies */
+  padding: 10px 40px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, padding 0.3s;
+}
+
+
+/* Logo styling */
 .logo img {
-    height: 50px;
+  height: 50px;
+  transition: height 0.3s; /* Smooth transition for logo size */
+}
+
+/* Navbar links styling */
+.navbar {
+  flex-grow: 1; /* Allow navbar to take available space */
+  display: flex; /* Ensure it uses flexbox */
+  justify-content: center; /* Center items horizontally */
 }
 
 .navbar ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+
 }
 
 .navbar a {
-    color: #f8f8f7; /* Light text for navbar */
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s;
+  color: #f8f8f7; /* Light text for the navbar */
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
 }
 
 .navbar a:hover {
-    color: #cf7832; /* Accent hover color */
+  color: #cf7832; /* Accent color on hover */
+}
+
+/* Content styling */
+.content {
+  padding-top: 100px; /* Prevent content from hiding behind the fixed navbar */
+  text-align: center;
+  padding: 50px;
+}
+
+/* Filler to enable scrolling */
+.filler {
+  height: 2000px; /* Height to create scrolling effect */
 }

@@ -23,5 +23,23 @@
     </nav>
 </header>
 
+<script>
+    alert("JavaScript is running!"); // This should show if the script is loading correctly
+    document.addEventListener("DOMContentLoaded", function () {
+        window.addEventListener("scroll", function () {
+            const header = document.querySelector(".header");
+            console.log("Scroll position:", window.scrollY);
+            if (window.scrollY > 1000) {
+                header.classList.add("header-scrolled");
+                console.log("header-scrolled added");
+            } else {
+                header.classList.remove("header-scrolled");
+                console.log("header-scrolled removed");
+            }
+        });
+    });
+</script>
+
+
 </body>
 </html>

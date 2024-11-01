@@ -25,7 +25,7 @@
             <p>Here are a Few Glimpses of Our Proudly Done Work. We have worked for the last decade on Designing & 3D exhibition stand Construction, Office Interiors Display stands, and Kiosks for various Expo presentations. We deeply examine each client’s brief, their budget, and try to satisfy their requirements with our brilliant ideas. We always make a detailed stand design for our clients, so that it is very easy for them to understand and make decisions fast and easier.</p>
         </div>
         <div class="image-content">
-            <img src="images/gallery9.png" alt="Our Work Showcase">
+            <img src="images/h10.png" alt="Our Work Showcase">
         </div>
     </div>
 </div>
@@ -33,26 +33,26 @@
 <section class="gallery-section">
     <h2>Our Gallery</h2>
     <div class="gallery-grid">
-        <img src="images/gallery1.png" alt="Gallery image 1">
-        <img src="images/gallery2.png" alt="Gallery image 2">
-        <img src="images/gallery3.png" alt="Gallery image 3">
-        <img src="images/gallery4.png" alt="Gallery image 4">
-        <img src="images/gallery5.png" alt="Gallery image 5">
-        <img src="images/gallery6.png" alt="Gallery image 6">
-        <img src="images/gallery7.png" alt="Gallery image 7">
-        <img src="images/gallery8.png" alt="Gallery image 8">
-        <img src="images/gallery9.png" alt="Gallery image 9">
-        <img src="images/gallery10.png" alt="Gallery image 10">
-        <img src="images/gallery11.png" alt="Gallery image 11">
-        <img src="images/gallery12.png" alt="Gallery image 12">
-        <img src="images/gallery13.png" alt="Gallery image 13">
-        <img src="images/gallery14.png" alt="Gallery image 14">
-        <img src="images/gallery15.png" alt="Gallery image 15">
-        <img src="images/gallery16.png" alt="Gallery image 16">
-        <img src="images/gallery17.png" alt="Gallery image 17">
-        <img src="images/gallery18.png" alt="Gallery image 18">
-        <img src="images/gallery19.png" alt="Gallery image 19">
-        <img src="images/gallery20.png" alt="Gallery image 20">
+        <img src="images/g1.png" alt="Gallery image 1">
+        <img src="images/g2.png" alt="Gallery image 2">
+        <img src="images/g3.png" alt="Gallery image 3">
+        <img src="images/g4.png" alt="Gallery image 4">
+        <img src="images/g5.png" alt="Gallery image 5">
+        <img src="images/g6.png" alt="Gallery image 6">
+        <img src="images/g7.png" alt="Gallery image 7">
+        <img src="images/g8.png" alt="Gallery image 8">
+        <img src="images/g9.png" alt="Gallery image 9">
+        <img src="images/g10.png" alt="Gallery image 10">
+        <img src="images/g11.png" alt="Gallery image 11">
+        <img src="images/g12.png" alt="Gallery image 12">
+        <img src="images/g13.png" alt="Gallery image 13">
+        <img src="images/g14.png" alt="Gallery image 14">
+        <img src="images/g15.png" alt="Gallery image 15">
+        <img src="images/g16.png" alt="Gallery image 16">
+        <img src="images/g17.png" alt="Gallery image 17">
+        <img src="images/g18.png" alt="Gallery image 18">
+        <img src="images/g19.png" alt="Gallery image 19">
+        <img src="images/g20.png" alt="Gallery image 20">
     </div>
 </section>
 
@@ -67,6 +67,40 @@
         document.getElementById("footer").innerHTML = await footerResponse.text();
     }
     loadContent();
+</script>
+
+<script>
+    // Throttle function to limit scroll event firing rate
+    function throttle(func, limit) {
+        let lastFunc;
+        let lastRan;
+        return function() {
+            const context = this;
+            const args = arguments;
+            if (!lastRan) {
+                func.apply(context, args);
+                lastRan = Date.now();
+            } else {
+                clearTimeout(lastFunc);
+                lastFunc = setTimeout(function() {
+                    if ((Date.now() - lastRan) >= limit) {
+                        func.apply(context, args);
+                        lastRan = Date.now();
+                    }
+                }, limit - (Date.now() - lastRan));
+            }
+        };
+    }
+
+    // Modified scroll function with a throttle
+    window.addEventListener("scroll", throttle(function() {
+        const header = document.querySelector(".header");
+        if (window.scrollY > 50) { // Adjust as needed for sensitivity
+            header.classList.add("header-scrolled");
+        } else {
+            header.classList.remove("header-scrolled");
+        }
+    }, 200)); // Adjust throttle time as needed
 </script>
 
 </body>
