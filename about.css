@@ -1,20 +1,25 @@
 /* Global Styles */
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #1a1a1a; /* Dark background */
-    color: #f4f4f4; /* Light text color for contrast */
-    line-height: 1.6;
-    margin: 0; /* Remove margin */
-    padding: 0; /* Remove padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #100103; /* Dark background */
+    color: #f8f8f7; /* Light text color */
+    line-height: 1.6;
+}
+
 /* Hero Section */
 .hero {
-    position: relative; /* Ensure hero section positions correctly */
-    overflow: hidden; /* Prevent overflow of video */
-    height: 75vh; /* Set height to match your design */
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    height: 75vh; /* Set height to 75% of viewport height */
+    display: flex; /* Use flexbox to align content */
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
 }
 
 .video-background {
@@ -30,6 +35,7 @@ body {
 }
 
 .hero-content {
+    position: relative; /* Ensure content is on top of the video */
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -37,7 +43,6 @@ body {
     margin: 0 auto;
     z-index: 1; /* Ensure content appears above the video */
     text-align: center;
-    color: #f8f8f7; /* Light text color */
 }
 
 .hero h1 {
@@ -49,6 +54,7 @@ body {
     font-size: 1.2em;
     margin: 0;
 }
+
 /* About Section Styles */
 .about-section {
     display: flex;
