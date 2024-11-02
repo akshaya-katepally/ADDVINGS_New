@@ -71,3 +71,15 @@
     height: auto;
     border-radius: 8px;
 }
+/* Animation Classes */
+.animate-left {
+    animation: slideInLeft 2s ease forwards; /* Control timing here */
+    opacity: 1; /* Become visible */
+    transform: translateX(0);
+}
+
+.animate-right {
+    animation: slideInRight 2s ease forwards; /* Control timing here */
+    opacity: 1; /* Become visible */
+    transform: translateX(0);
+}
