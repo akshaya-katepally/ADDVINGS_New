@@ -120,13 +120,184 @@ body {
 
 /* Animation Classes */
 .animate-left {
-    animation: slideInLeft 2s ease forwards; /* Control timing here */
-    opacity: 1; /* Become visible */
-    transform: translateX(0);
+    animation: slideInLeft 2s forwards; /* Control timing here */
 }
 
 .animate-right {
-    animation: slideInRight 2s ease forwards; /* Control timing here */
-    opacity: 1; /* Become visible */
-    transform: translateX(0);
+    animation: slideInRight 2s forwards; /* Control timing here */
 }
+
+.timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 100px auto;
+}
+
+.container {
+    padding: 10px 60px; /* Increase left and right padding */
+    position: relative;
+    width: calc(50% - 40px); /* Adjust width to avoid overlap */
+    animation: movedown 1s linear forwards;
+    opacity: 0;
+}
+
+.container img {
+    position: absolute;
+    width: 40px;
+    border-radius: 50%;
+    right: -20px;
+    top: 32px;
+    z-index: 10;
+}
+
+.right-container img {
+    left: -20px;
+}
+
+.timeline:after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 100%;
+    background: #fff; /* White line */
+    top: 0;
+    left: calc(50% - 3px); /* Center the line */
+    transform: translateX(-50%); /* Center the line */
+    z-index: 1; /* Ensure it's below the containers */
+    animation: moveline 6s linear forwards;
+}
+
+@keyframes moveline {
+    0% {
+        height: 0;
+    }
+    100% {
+        height: 100%;
+    }
+}
+
+.text-box {
+    padding: 20px 30px;
+    background: #fff;
+    position: relative;
+    border-radius: 6px;
+    width: 100%;
+    font-size: 15px;
+    color: #000;
+}
+
+.left-container {
+    left: -1%;
+}
+
+.right-container {
+    left: 53%;
+}
+
+.text-box h2 {
+    font-weight: 600;
+}
+
+.text-box small {
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.left-container-arrow {
+    height: 0;
+    width: 0;
+    position: absolute;
+    top: 28px;
+    z-index: 1;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 15px solid #fff;
+    right: -15px;
+}
+
+.right-container-arrow {
+    height: 0;
+    width: 0;
+    position: absolute;
+    top: 28px;
+    z-index: 1;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-right: 15px solid #fff;
+    left: -15px;
+}
+
+.journey-title {
+    text-align: center; /* Center the text */
+    color: #cf7832; /* Orange color */
+    margin: 40px 0; /* Add some vertical spacing */
+    font-size: 2em; /* Adjust the font size as needed */
+}
+
+/* Scroll and Animation Effects */
+@keyframes movedown {
+    0% {
+        opacity: 1;
+        transform: translateY(-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+.container:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.container:nth-child(2) {
+    animation-delay: 1s;
+}
+
+.container:nth-child(3) {
+    animation-delay: 2s;
+}
+
+.container:nth-child(4) {
+    animation-delay: 3s;
+}
+
+.container:nth-child(5) {
+    animation-delay: 4s;
+}
+
+.container:nth-child(6) {
+    animation-delay: 5s;
+}
+
+/* Scroll Behavior */
+function throttle(func, limit) {
+    let lastFunc;
+    let lastRan;
+    return function () {
+        const context = this;
+        const args = arguments;
+        if (!lastRan) {
+            func.apply(context, args);
+            lastRan = Date.now();
+        } else {
+            clearTimeout(lastFunc);
+            lastFunc = setTimeout(function () {
+                if ((Date.now() - lastRan) >= limit) {
+                    func.apply(context, args);
+                    lastRan = Date.now();
+                }
+            }, limit - (Date.now() - lastRan));
+        }
+    };
+}
+
+/* Modified scroll function with a throttle */
+window.addEventListener("scroll", throttle(function () {
+    const header = document.querySelector(".header");
+    if (window.scrollY > 50) { // Adjust as needed for sensitivity
+        header.classList.add("header-scrolled");
+    } else {
+        header.classList.remove("header-scrolled");
+    }
+}, 200)); // Adjust throttle time as needed
