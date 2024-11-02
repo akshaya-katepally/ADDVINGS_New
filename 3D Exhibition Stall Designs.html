@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ADDVINGS - About Us</title>
-    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="about.css">
 </head>
 <body>
@@ -26,7 +25,7 @@
         <img src="images/g10.png" alt="g10" class="g10-image">
         <div class="text-content">
             <h2>Exceptional 3D Exhibition Stall Designss</h2>
-            <p>Jai Jaaivanti holds years of expertise in transforming your exhibition experience by providing cutting-edge 3D designs. We offer customized 3D design for exhibition services tailored to your business needs to enhance your brand’s presence.Our experienced team aims to create captivating and immersive exhibition stall designs. We work with precision to leave a long-lasting impression on your targeted audience. Moreover, you don’t need to spend a lot to avail of our professional services.</p>
+            <p>ADD VINGS holds years of expertise in transforming your exhibition experience by providing cutting-edge 3D designs. We offer customized 3D design for exhibition services tailored to your business needs to enhance your brand’s presence.Our experienced team aims to create captivating and immersive exhibition stall designs. We work with precision to leave a long-lasting impression on your targeted audience. Moreover, you don’t need to spend a lot to avail of our professional services.</p>
         </div>
     </div>
 </section>
@@ -44,9 +43,7 @@
 
 <!-- Placeholder for footer -->
 <div id="footer"></div> 
-
 <script>
-    // Load header and footer using fetch
     async function loadContent() {
         const headerResponse = await fetch("header.html");
         const footerResponse = await fetch("footer.html");
@@ -54,7 +51,9 @@
         document.getElementById("footer").innerHTML = await footerResponse.text();
     }
     loadContent();
+</script>
 
+<script>
     // Intersection Observer for animation
     const options = {
         root: null, // Use the viewport as the container
@@ -83,6 +82,43 @@
         observer.observe(section);
     });
 </script>
+
+<script>
+    // Throttle function to limit scroll event firing rate
+    function throttle(func, limit) {
+        let lastFunc;
+        let lastRan;
+        return function() {
+            const context = this;
+            const args = arguments;
+            if (!lastRan) {
+                func.apply(context, args);
+                lastRan = Date.now();
+            } else {
+                clearTimeout(lastFunc);
+                lastFunc = setTimeout(function() {
+                    if ((Date.now() - lastRan) >= limit) {
+                        func.apply(context, args);
+                        lastRan = Date.now();
+                    }
+                }, limit - (Date.now() - lastRan));
+            }
+        };
+    }
+
+    // Modified scroll function with a throttle
+    window.addEventListener("scroll", throttle(function() {
+        const header = document.querySelector(".header");
+        if (window.scrollY > 50) { // Adjust as needed for sensitivity
+            header.classList.add("header-scrolled");
+        } else {
+            header.classList.remove("header-scrolled");
+        }
+    }, 200)); // Adjust throttle time as needed
+</script>
+
+
+
 
 </body>
 </html>
