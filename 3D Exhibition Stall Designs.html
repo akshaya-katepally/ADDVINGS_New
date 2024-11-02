@@ -3,46 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ADDVINGS - About Us</title>
+    <title>ADDVINGS - 3D Exhibition Stall Design</title>
     <link rel="stylesheet" href="about.css">
 </head>
 <body>
 
 <!-- Placeholder for header -->
- <div id="header"></div> 
- 
- <section class="hero">
+<div id="header"></div> 
+
+<section class="hero">
     <video autoplay loop muted class="video-background">
         <source src="/images/v1.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
     <div class="hero-content">
         <h1>3D Exhibition Stall Design</h1>
+        <p>Creative Designs for Impactful Brand Presence.</p>
     </div>
 </section> 
+
+<!-- First Section with Content -->
 <section class="about-section" id="about-us">
     <div class="about-content">
-        <img src="images/g10.png" alt="g10" class="g10-image">
+        <img src="images/g10.png" alt="g10" class="about-image">
         <div class="text-content">
-            <h2>Exceptional 3D Exhibition Stall Designss</h2>
-            <p>ADD VINGS holds years of expertise in transforming your exhibition experience by providing cutting-edge 3D designs. We offer customized 3D design for exhibition services tailored to your business needs to enhance your brand’s presence.Our experienced team aims to create captivating and immersive exhibition stall designs. We work with precision to leave a long-lasting impression on your targeted audience. Moreover, you don’t need to spend a lot to avail of our professional services.</p>
+            <h2>Exceptional 3D Exhibition Stall Designs</h2>
+            <p>ADD VINGS holds years of expertise in transforming your exhibition experience with cutting-edge 3D designs. We offer custom 3D design services to elevate your brand’s presence. Our skilled team works meticulously to create captivating and immersive stall designs that leave a memorable impression on your audience.</p>
         </div>
     </div>
 </section>
 
+<!-- Reverse Section -->
 <section class="about-section reverse" id="our-vision">
     <div class="about-content">
         <div class="text-content">
-            <p>You can contact our dedicated team anytime according to your convenience. We will try our best to seamlessly transition services to the execution phase. Being an industry expert in 3D design for exhibition, we are a network of trusted partners and suppliers. Thus, we come up with the best aesthetic 3D designs. So, it’s time to elevate your brand presence with us.</p>
+            <p>We collaborate with trusted partners and suppliers to bring you the best in aesthetic 3D designs, ensuring seamless transitions from concept to execution. Elevate your brand presence with ADDVINGS.</p>
         </div>
-        <img src="images/g11.png" alt="g11" class="g11-image">
+        <img src="images/g11.png" alt="g11" class="about-image">
     </div>
 </section>
 
-
-
 <!-- Placeholder for footer -->
 <div id="footer"></div> 
+
 <script>
     async function loadContent() {
         const headerResponse = await fetch("header.html");
@@ -56,9 +59,9 @@
 <script>
     // Intersection Observer for animation
     const options = {
-        root: null, // Use the viewport as the container
+        root: null,
         rootMargin: '0px',
-        threshold: 0.5 // Trigger when 50% of the element is visible
+        threshold: 0.5
     };
 
     const observer = new IntersectionObserver((entries) => {
@@ -77,14 +80,13 @@
         });
     });
 
-    // Observe each about section individually
     document.querySelectorAll('.about-section').forEach(section => {
         observer.observe(section);
     });
 </script>
 
 <script>
-    // Throttle function to limit scroll event firing rate
+    // Throttle function to control scroll rate
     function throttle(func, limit) {
         let lastFunc;
         let lastRan;
@@ -106,19 +108,15 @@
         };
     }
 
-    // Modified scroll function with a throttle
     window.addEventListener("scroll", throttle(function() {
         const header = document.querySelector(".header");
-        if (window.scrollY > 50) { // Adjust as needed for sensitivity
+        if (window.scrollY > 50) {
             header.classList.add("header-scrolled");
         } else {
             header.classList.remove("header-scrolled");
         }
-    }, 200)); // Adjust throttle time as needed
+    }, 200));
 </script>
-
-
-
 
 </body>
 </html>
