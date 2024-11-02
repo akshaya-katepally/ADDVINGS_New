@@ -3,36 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exhibition Stall Design</title>
-    <link rel="stylesheet" href="Exhibition Stall Designs.css">
+    <title>ADDVINGS -Retail Kisok Design</title>
+    <link rel="stylesheet" href="about.css">
 </head>
 <body>
-    <!-- Placeholder for header -->
-<div id="header"></div>
-    
 
+<!-- Placeholder for header -->
+<div id="header"></div> 
 
-    <!-- Header Section with Background Image -->
-    <div class="header-section">
+<section class="hero">
+    <video autoplay loop muted class="video-background">
+        <source src="/images/v1.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <div class="hero-content">
         <h1>Kiosk Design Services for Outdoor, Office, Retail & Mall Kiosk Design</h1>
     </div>
+</section> 
 
-    <!-- Text and Image Section -->
-    <div class="content-section">
+<!-- First Section with Content -->
+<section class="about-section" id="about-us">
+    <div class="about-content">
+        <img src="images/g1.png" alt="g1" class="about-image">
         <div class="text-content">
-            <h1 class="highlighted-text">Transforming Spaces with Innovative Retail Kiosk Design Services</h1>
-            <p>
-                ADD VINGS welcomes you to receive an innovative retail kiosk design at affordable prices. Being at the forefront of the industry, we understand the role of retail kiosks to enhance customer experiences. Moreover, the designs can help you to drive sales. Our years of expertise lie in crafting unique captivating retail kiosk designs that draw everyone’s attention. While providing designs, we focus on optimizing functionality and creating immersive brand experiences. So, your investment in kiosk designs will be worthwhile and will give you higher returns.
-            </p>
-        </div>
-        <div class="image-content">
-            <img src="images/g6.png" alt="Retail Kisok Design">
+            <h2>Transforming Spaces with Innovative Retail Kiosk Design Services</h2>
+            <br>
+            <p>ADD VINGS welcomes you to receive an innovative retail kiosk design at affordable prices. Being at the forefront of the industry, we understand the role of retail kiosks to enhance customer experiences. Moreover, the designs can help you to drive sales. Our years of expertise lie in crafting unique captivating retail kiosk designs that draw everyone’s attention. While providing designs, we focus on optimizing functionality and creating immersive brand experiences. So, your investment in kiosk designs will be worthwhile and will give you higher returns</p>
         </div>
     </div>
-    <!-- Placeholder for footer -->
-<div id="footer"></div>
+</section>
+
+<!-- Reverse Section -->
+<section class="about-section reverse" id="our-vision">
+    <div class="about-content">
+        <div class="text-content">
+            <p>We provide well-designed and unique retail kiosk design that are more than structured. In today’s competitive scenario, it is one of the most powerful marketing tools that serves. Yes, by investing in them, business owners can engage their potential customers. The team of Jai Jaaivanti believes that every kiosk should reflect the brand’s essence. Thus, we always provide customized services tailored to your business. Our team aims to offer a seamless blend of aesthetics and functionality at the best reasonable prices. We always provide unique captivating designs that aim to maximize space utilization. At ADD VINGS, we ensure ease of navigation and aim to provide the best exceptional services.</p>
+        </div>
+        <img src="images/g2.png" alt="g2" class="about-image">
+    </div>
+</section>
+
+<!-- Placeholder for footer -->
+<div id="footer"></div> 
+
 <script>
-    // Load header and footer using fetch
     async function loadContent() {
         const headerResponse = await fetch("header.html");
         const footerResponse = await fetch("footer.html");
@@ -40,23 +54,39 @@
         document.getElementById("footer").innerHTML = await footerResponse.text();
     }
     loadContent();
+</script>
 
-    // JavaScript for scroll-triggered animation
-    window.addEventListener("scroll", function () {
-        const aboutSection = document.querySelector(".about");
-        const sectionTop = aboutSection.getBoundingClientRect().top;
-        const triggerPoint = window.innerHeight - 100;
-    
-        if (sectionTop < triggerPoint) {
-            aboutSection.classList.add("fade-in");
-        } else {
-            aboutSection.classList.remove("fade-in");
-        }
+<script>
+    // Intersection Observer for animation
+    const options = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.5
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target.querySelector('.about-image');
+                const text = entry.target.querySelector('.text-content');
+                if (entry.target.classList.contains('reverse')) {
+                    text.classList.add('animate-left');
+                    img.classList.add('animate-right');
+                } else {
+                    img.classList.add('animate-left');
+                    text.classList.add('animate-right');
+                }
+            }
+        });
+    });
+
+    document.querySelectorAll('.about-section').forEach(section => {
+        observer.observe(section);
     });
 </script>
 
 <script>
-    // Throttle function to limit scroll event firing rate
+    // Throttle function to control scroll rate
     function throttle(func, limit) {
         let lastFunc;
         let lastRan;
@@ -78,15 +108,14 @@
         };
     }
 
-    // Modified scroll function with a throttle
     window.addEventListener("scroll", throttle(function() {
         const header = document.querySelector(".header");
-        if (window.scrollY > 50) { // Adjust as needed for sensitivity
+        if (window.scrollY > 50) {
             header.classList.add("header-scrolled");
         } else {
             header.classList.remove("header-scrolled");
         }
-    }, 200)); // Adjust throttle time as needed
+    }, 200));
 </script>
 
 </body>
