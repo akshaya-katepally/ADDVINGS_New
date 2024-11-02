@@ -5,23 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ADDVINGS - About Us</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="about.css">
 </head>
 <body>
 
 <!-- Placeholder for header -->
-<div id="header"></div> 
+<div id="header"></div>
 
-<!-- Hero Section -->
-<section class="hero">
-    <!-- Video Background -->
-    <video autoplay loop muted playsinline class="hero-video">
-        <source src="/mnt/data/521525a5f253b13c14772e4866c80c71.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
-    
-    <div class="hero-content">
-        <h1>About Us</h1>
-        <p>Discover more about our mission, values, and the team that makes it all possible.</p>
+<!-- About Section -->
+<section class="about-section" id="about-us">
+    <div class="about-content">
+        <img src="images/about1.jpg" alt="About Image 1" class="about-image">
+        <div class="text-content">
+            <h2>About Us</h2>
+            <p>Welcome to ADDVINGS! ADDVINGS Global is a leading exhibition stand builder in Dubai, specializing in custom designs and event solutions. 
+                We take pride in delivering exceptional craftsmanship and seamless project management for businesses worldwide.</p>
+        </div>
+    </div>
+</section>
+
+<section class="about-section reverse" id="our-vision">
+    <div class="about-content">
+        <div class="text-content">
+            <h2>Our Vision</h2>
+            <p>Our vision is to be the leading provider in our industry, driven by innovation and excellence. We aim to exceed customer expectations through our comprehensive solutions.</p>
+        </div>
+        <img src="images/about2.jpg" alt="About Image 2" class="about-image">
     </div>
 </section>
 
@@ -37,6 +46,34 @@
         document.getElementById("footer").innerHTML = await footerResponse.text();
     }
     loadContent();
+
+    // Intersection Observer for animation
+    const options = {
+        root: null, // Use the viewport as the container
+        rootMargin: '0px',
+        threshold: 0.5 // Trigger when 50% of the element is visible
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target.querySelector('.about-image');
+                const text = entry.target.querySelector('.text-content');
+                if (entry.target.classList.contains('reverse')) {
+                    text.classList.add('animate-left');
+                    img.classList.add('animate-right');
+                } else {
+                    img.classList.add('animate-left');
+                    text.classList.add('animate-right');
+                }
+            }
+        });
+    });
+
+    // Observe each about section individually
+    document.querySelectorAll('.about-section').forEach(section => {
+        observer.observe(section);
+    });
 </script>
 
 </body>
