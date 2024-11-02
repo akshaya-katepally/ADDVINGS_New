@@ -3,45 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exhibition Stall Design</title>
-    <link rel="stylesheet" href="Exhibition Stall Designs.css">
+    <title>ADDVINGS - About Us</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="about.css">
 </head>
 <body>
-    <!-- Placeholder for header -->
-<div id="header"></div>
-    
 
-
-    <!-- Header Section with Background Image -->
-    <div class="header-section">
+<!-- Placeholder for header -->
+ <div id="header"></div> 
+ 
+ <section class="hero">
+    <video autoplay loop muted class="video-background">
+        <source src="/images/v1.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <div class="hero-content">
         <h1>3D Exhibition Stall Design</h1>
     </div>
-
-    <!-- Text and Image Section -->
-    <div class="content-section">
+</section> 
+<section class="about-section" id="about-us">
+    <div class="about-content">
+        <img src="images/g10.png" alt="g10" class="g10-image">
         <div class="text-content">
-            <h1>Exceptional 3D Exhibition Stall Designs</h1>
-            <p>
-                ADD VINGS holds years of expertise in transforming your exhibition experience by providing cutting-edge 3D designs. 
-                We offer customized 3D design for exhibition services tailored to your business needs to enhance your brand’s presence.
-                Our experienced team aims to create captivating and immersive exhibition stall designs. We work with precision to leave a 
-                long-lasting impression on your targeted audience. Moreover, you don’t need to spend a lot to avail of our professional services.
-            </p>
-                <br><br>
-                <div class="additional-section">
-                    <p>
-                        You can contact our dedicated team anytime according to your convenience. We will try our best to seamlessly transition services 
-                        to the execution phase. Being an industry expert in 3D design for exhibition, we are a network of trusted partners and suppliers. 
-                        Thus, we come up with the best aesthetic 3D designs. So, it’s time to elevate your brand presence with us.
-                    </p>
-                </div>
-        </div>
-        <div class="image-content">
-            <img src="images/g5.png" alt="3D Exhibition Stall Design">
+            <h2>Exceptional 3D Exhibition Stall Designss</h2>
+            <p>Jai Jaaivanti holds years of expertise in transforming your exhibition experience by providing cutting-edge 3D designs. We offer customized 3D design for exhibition services tailored to your business needs to enhance your brand’s presence.Our experienced team aims to create captivating and immersive exhibition stall designs. We work with precision to leave a long-lasting impression on your targeted audience. Moreover, you don’t need to spend a lot to avail of our professional services.</p>
         </div>
     </div>
-    <!-- Placeholder for footer -->
-<div id="footer"></div>
+</section>
+
+<section class="about-section reverse" id="our-vision">
+    <div class="about-content">
+        <div class="text-content">
+            <p>You can contact our dedicated team anytime according to your convenience. We will try our best to seamlessly transition services to the execution phase. Being an industry expert in 3D design for exhibition, we are a network of trusted partners and suppliers. Thus, we come up with the best aesthetic 3D designs. So, it’s time to elevate your brand presence with us.</p>
+        </div>
+        <img src="images/g11.png" alt="g11" class="g11-image">
+    </div>
+</section>
+
+
+
+<!-- Placeholder for footer -->
+<div id="footer"></div> 
+
 <script>
     // Load header and footer using fetch
     async function loadContent() {
@@ -52,52 +55,33 @@
     }
     loadContent();
 
-    // JavaScript for scroll-triggered animation
-    window.addEventListener("scroll", function () {
-        const aboutSection = document.querySelector(".about");
-        const sectionTop = aboutSection.getBoundingClientRect().top;
-        const triggerPoint = window.innerHeight - 100;
-    
-        if (sectionTop < triggerPoint) {
-            aboutSection.classList.add("fade-in");
-        } else {
-            aboutSection.classList.remove("fade-in");
-        }
-    });
-</script>
+    // Intersection Observer for animation
+    const options = {
+        root: null, // Use the viewport as the container
+        rootMargin: '0px',
+        threshold: 0.5 // Trigger when 50% of the element is visible
+    };
 
-<script>
-    // Throttle function to limit scroll event firing rate
-    function throttle(func, limit) {
-        let lastFunc;
-        let lastRan;
-        return function() {
-            const context = this;
-            const args = arguments;
-            if (!lastRan) {
-                func.apply(context, args);
-                lastRan = Date.now();
-            } else {
-                clearTimeout(lastFunc);
-                lastFunc = setTimeout(function() {
-                    if ((Date.now() - lastRan) >= limit) {
-                        func.apply(context, args);
-                        lastRan = Date.now();
-                    }
-                }, limit - (Date.now() - lastRan));
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target.querySelector('.about-image');
+                const text = entry.target.querySelector('.text-content');
+                if (entry.target.classList.contains('reverse')) {
+                    text.classList.add('animate-left');
+                    img.classList.add('animate-right');
+                } else {
+                    img.classList.add('animate-left');
+                    text.classList.add('animate-right');
+                }
             }
-        };
-    }
+        });
+    });
 
-    // Modified scroll function with a throttle
-    window.addEventListener("scroll", throttle(function() {
-        const header = document.querySelector(".header");
-        if (window.scrollY > 50) { // Adjust as needed for sensitivity
-            header.classList.add("header-scrolled");
-        } else {
-            header.classList.remove("header-scrolled");
-        }
-    }, 200)); // Adjust throttle time as needed
+    // Observe each about section individually
+    document.querySelectorAll('.about-section').forEach(section => {
+        observer.observe(section);
+    });
 </script>
 
 </body>
