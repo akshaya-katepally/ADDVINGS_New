@@ -160,13 +160,37 @@ body {
     padding: 20px;
 }
 
-/* Update social icon colors to match the theme */
+/* Social Icon Styles */
 .social-icon {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
     color: white;
-    background-color: #333; /* Dark background for icons */
+    font-size: 1.5em;
+    transition: background-color 0.3s, transform 0.3s;
 }
 
-/* Adjust hover effects if needed */
+.social-icon.facebook {
+    background-color: #3b5998; /* Facebook blue */
+}
+
+.social-icon.instagram {
+    background: radial-gradient(circle at 35% 30%, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
+}
+
+.social-icon.linkedin {
+    background-color: #0077b5; /* LinkedIn blue */
+}
+
+.social-icon.youtube {
+    background-color: #ff0000; /* YouTube red */
+}
+
+/* Hover Effects for Social Icons */
 .social-icon:hover {
-    background-color: #444; /* Slightly lighter on hover */
+    transform: scale(1.1); /* Slightly increase size on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Shadow effect on hover */
 }

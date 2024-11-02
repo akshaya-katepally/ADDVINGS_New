@@ -38,57 +38,48 @@
             margin-bottom: 15px;
         }
         
-    /* Social Icons Container */
-    .social-icons {
-        display: flex;
-        gap: 10px;
-        margin-top: 10px;
-    }
+        /* Social Icons Container */
+        .social-icons {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
 
-    /* Individual Social Icon Styling */
-    .social-icon {
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        font-size: 18px;
-        color: white;
-        background-color: transparent;
-        display: flex; /* Ensures contents are aligned in the center */
-        align-items: center; /* Vertical centering */
-        justify-content: center; /* Horizontal centering */
-        overflow: hidden;
-        position: relative;
-        margin: 0 auto; /* Centers the icon within its parent */
-    }
-    
+        /* Individual Social Icon Styling */
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-size: 20px; /* Adjusted font size */
+            color: white;
+            background-color: transparent;
+            display: flex; /* Ensures contents are aligned in the center */
+            align-items: center; /* Vertical centering */
+            justify-content: center; /* Horizontal centering */
+            overflow: hidden;
+            transition: transform 0.3s, filter 0.3s;
+        }
+        
+        /* Specific styles for each icon */
+        .facebook { 
+            background-color: #3b5998; 
+        }
+        .instagram { 
+            background: radial-gradient(circle at 30% 30%, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5); 
+        }
+        .linkedin { 
+            background-color: #0077b5; 
+        }
+        .youtube { 
+            background-color: #ff0000; 
+        }
 
-    /* Specific styles for each icon */
-    .facebook { 
-        background-color: #3b5998; 
-    }
-    .instagram { 
-        background: radial-gradient(circle at 30% 30%, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5); 
-    }
-    .linkedin { 
-        background-color: #0077b5; 
-    }
-    .youtube { 
-        background-color: #ff0000; 
-    }
-
-    /* Hover effect */
-    .social-icon:hover { 
-        transform: scale(1.1);
-        filter: brightness(1.2);
-    }
-    
-    /* Icon Position Fix */
-    .social-icon i {
-        font-size: 20px; /* Font size of the icon */
-        line-height: 40px; /* Ensures it’s vertically centered */
-        margin: 0; /* Ensure there's no margin affecting centering */
-    }
-</style>
+        /* Hover effect */
+        .social-icon:hover { 
+            transform: scale(1.1);
+            filter: brightness(1.2);
+        }
+    </style>
 </head>
 <body>
 
