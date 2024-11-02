@@ -47,6 +47,78 @@
     </div>
 </section>
 
+<h3 class="journey-title">Our Journey</h3>
+
+
+
+<div class="timeline">
+
+    <div class="container left-container">
+        <img src="images\2006.jpeg">
+        <div class="text-box">
+            <h2>Establishment</h2>
+            <small>2006</small>
+            <p>Founded by a passionate team of event enthusiasts with a vision to redefine event planning.</p>
+            <span class="left-container-arrow"></span>
+        </div>
+    </div>
+
+    <div class="container right-container">
+        <img src="images\2007.jpeg">
+        <div class="text-box">
+            <h2>First Major Event</h2>
+            <small>2007</small>
+            <p>Successfully organized our first large-scale wedding, receiving rave reviews and referrals.</p>
+            <span class="right-container-arrow"></span>
+        </div>
+    </div>
+
+    <div class="container left-container">
+        <img src="images\2011.jpeg">
+        <div class="text-box">
+            <h2>Expansion of Services</h2>
+            <small>2011</small>
+            <p>Expanded our offerings to include corporate events, birthday parties, and themed celebrations.</p>
+            <span class="left-container-arrow"></span>
+        </div>
+    </div>
+
+    <div class="container right-container">
+        <img src="images\2015.jpeg">
+        <div class="text-box">
+            <h2>Award Recognition</h2>
+            <small>2015</small>
+            <p>Won the “Best Event Planning Company” award at the local business awards, highlighting our commitment to excellence.</p>
+            <span class="right-container-arrow"></span>
+        </div>
+    </div>
+
+    <div class="container left-container">
+        <img src="images\2020.jpeg">
+        <div class="text-box">
+            <h2>Strategic Partnerships</h2>
+            <small>2020</small>
+            <p>Established partnerships with top vendors and venues, enhancing our service offerings and event quality.</p>
+            <span class="left-container-arrow"></span>
+        </div>
+    </div>
+
+    <div class="container right-container">
+        <img src="images\2024.jpeg">
+        <div class="text-box">
+            <h2> 18th Anniversary</h2>
+            <small>2024</small>
+            <p>Celebrated our 18th anniversary with a special event showcasing our journey and accomplishments, thanking our clients and partners for their support.</p>
+            <span class="right-container-arrow"></span>
+        </div>
+    </div>
+
+
+</div>
+
+
+
+
 <!-- Placeholder for footer -->
 <div id="footer"></div> 
 
@@ -62,69 +134,58 @@
 </script>
 
 <script>
-    // Intersection Observer for animation
-    const options = {
-        root: null, // Use the viewport as the container
-        rootMargin: '0px',
-        threshold: 0.5 // Trigger when 50% of the element is visible
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const img = entry.target.querySelector('.about-image');
-                const text = entry.target.querySelector('.text-content');
-                if (entry.target.classList.contains('reverse')) {
-                    text.classList.add('animate-left');
-                    img.classList.add('animate-right');
-                } else {
-                    img.classList.add('animate-left');
-                    text.classList.add('animate-right');
+    // Intersection Observer for animation in About Section
+    document.addEventListener("DOMContentLoaded", () => {
+        const aboutObserverOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.5
+        };
+    
+        const aboutObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target.querySelector('.about-image');
+                    const text = entry.target.querySelector('.text-content');
+                    if (entry.target.classList.contains('reverse')) {
+                        text.classList.add('animate-left');
+                        img.classList.add('animate-right');
+                    } else {
+                        img.classList.add('animate-left');
+                        text.classList.add('animate-right');
+                    }
+                    aboutObserver.unobserve(entry.target); // Stop observing once animated
                 }
-            }
+            });
+        }, aboutObserverOptions);
+    
+        document.querySelectorAll('.about-section').forEach(section => {
+            aboutObserver.observe(section);
         });
     });
-
-    // Observe each about section individually
-    document.querySelectorAll('.about-section').forEach(section => {
-        observer.observe(section);
-    });
-</script>
-
-<script>
-    // Throttle function to limit scroll event firing rate
-    function throttle(func, limit) {
-        let lastFunc;
-        let lastRan;
-        return function() {
-            const context = this;
-            const args = arguments;
-            if (!lastRan) {
-                func.apply(context, args);
-                lastRan = Date.now();
-            } else {
-                clearTimeout(lastFunc);
-                lastFunc = setTimeout(function() {
-                    if ((Date.now() - lastRan) >= limit) {
-                        func.apply(context, args);
-                        lastRan = Date.now();
-                    }
-                }, limit - (Date.now() - lastRan));
-            }
+    
+    // Timeline animation using Intersection Observer
+    document.addEventListener("DOMContentLoaded", () => {
+        const timelineObserverOptions = {
+            root: null,
+            threshold: 0.5
         };
-    }
-
-    // Modified scroll function with a throttle
-    window.addEventListener("scroll", throttle(function() {
-        const header = document.querySelector(".header");
-        if (window.scrollY > 50) { // Adjust as needed for sensitivity
-            header.classList.add("header-scrolled");
-        } else {
-            header.classList.remove("header-scrolled");
-        }
-    }, 200)); // Adjust throttle time as needed
-</script>
-
+    
+        const timelineObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('appear');
+                    timelineObserver.unobserve(entry.target); // Stop observing once animated
+                }
+            });
+        }, timelineObserverOptions);
+    
+        document.querySelectorAll('.timeline .container').forEach(container => {
+            timelineObserver.observe(container);
+        });
+    });
+    </script>
+    
 
 </body>
 </html>
