@@ -7,7 +7,7 @@
   
   body {
     font-family: 'Poppins', sans-serif;
-    background-color: #f8f8f7; /* Light background */
+    background-color: #3c1e01; /* Light background */
     color: #100103; /* Dark text */
   }
   
@@ -87,7 +87,7 @@
   .dropdown-menu a {
     display: block;
     padding: 15px;
-    color: white;
+    color: rgb(81, 52, 6);
     text-align: center;
     transition: background-color 0.3s;
   }
@@ -111,7 +111,7 @@
   }
   
   .navbar a {
-    color: #f8f8f7; /* Light text for navbar */
+    color: #b34618; /* Light text for navbar */
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s;
@@ -130,7 +130,7 @@
     align-items: center;
     text-align: center;
     padding: 0 20px;
-    color: #f8f8f7; /* Light text */
+    color: #e86118; /* Light text */
   }
   
   .hero-tagline {
@@ -176,7 +176,7 @@
   .btn {
     padding: 12px 25px;
     background-color: #cf7832; /* Button color */
-    color: #f8f8f7; /* Light text */
+    color: #ca8741; /* Light text */
     border: none;
     border-radius: 5px;
     text-decoration: none;
@@ -188,6 +188,19 @@
     background-color: #a52420; /* Darker on hover */
     transform: scale(1.05); /* Slightly scale button */
   }
+  .additional-section {
+    background-image: url('path/to/your/background-image2.jpg'); /* Replace with your actual background image path */
+    background-size: cover;
+    background-position: center;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(189, 125, 51);
+    font-size: 1.2em;
+    text-align: center;
+    padding: 0 20px;
+}
   
   
   
@@ -198,7 +211,7 @@
   /* Footer */
   footer {
     background-color: #333;
-    color: white;
+    color: rgb(186, 38, 38);
     padding: 40px;
     display: flex;
     flex-direction: column;
