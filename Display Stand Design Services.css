@@ -1,0 +1,74 @@
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #1a1a1a; /* Dark background */
+    color: #f4f4f4; /* Light text color for contrast */
+    line-height: 1.6;
+    margin: 0; /* Remove margin */
+    padding: 0; /* Remove padding */
+}
+/* Hero Section */
+.hero {
+    position: relative; /* Ensure hero section positions correctly */
+    overflow: hidden; /* Prevent overflow of video */
+    height: 75vh; /* Set height to match your design */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.video-background {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1; /* Place video behind other content */
+    transform: translate(-50%, -50%); /* Center video */
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 800px;
+    margin: 0 auto;
+    z-index: 1; /* Ensure content appears above the video */
+    text-align: center;
+    color: #f8f8f7; /* Light text color */
+}
+
+.hero h1 {
+    font-size: 2.5em;
+    margin: 0;
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
