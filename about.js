@@ -10,12 +10,18 @@ const observer = new IntersectionObserver((entries) => {
         if (entry.isIntersecting) {
             const img = entry.target.querySelector('.about-image');
             const text = entry.target.querySelector('.text-content');
-            if (entry.target.classList.contains('reverse')) {
-                text.classList.add('animate-left');
-                img.classList.add('animate-right');
-            } else {
-                img.classList.add('animate-left');
-                text.classList.add('animate-right');
+
+            // Check if the animation has already been triggered
+            if (!entry.target.classList.contains('animated')) {
+                if (entry.target.classList.contains('reverse')) {
+                    text.classList.add('animate-left');
+                    img.classList.add('animate-right');
+                } else {
+                    img.classList.add('animate-left');
+                    text.classList.add('animate-right');
+                }
+                // Mark this section as animated
+                entry.target.classList.add('animated');
             }
         }
     });
