@@ -3,44 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exhibition Stall Design</title>
-    <link rel="stylesheet" href="Exhibition Stall Designs.css">
+    <title>ADDVINGS - Exhibition Stall Designs</title>
+    <link rel="stylesheet" href="about.css">
 </head>
 <body>
-    <!-- Placeholder for header -->
-<div id="header"></div>
-    
 
+<!-- Placeholder for header -->
+<div id="header"></div> 
 
-    <!-- Header Section with Background Image -->
-    <div class="header-section">
+<section class="hero">
+    <video autoplay loop muted class="video-background">
+        <source src="/images/v1.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <div class="hero-content">
         <h1>Creative Exhibition Stall Design Service</h1>
     </div>
+</section> 
 
-    <!-- Text and Image Section -->
-    <div class="content-section">
+<!-- First Section with Content -->
+<section class="about-section" id="about-us">
+    <div class="about-content">
+        <img src="images/g3.png" alt="g3" class="about-image">
         <div class="text-content">
-            <h2 class="highlighted-text">Innovative Exhibition Stall Designs by ADD VINGS</h2>
-            <h1>Elevate Your Brand's Presence</h1>
-            <p>
-                The experienced and professional team of ADD VINGS is redefining the art of exhibition stall design. 
-                We aim to offer bespoke solutions that can elevate your brand presence at trade shows and events. 
-                All our team members are passionate about delivering innovative and creative exhibition stall design 
-                at the best competitive prices. Due to years of expertise in design and construction, we can cater 
-                to the diverse needs of our clients. You can discuss your requirements with us and allow us to craft 
-                exhibition stalls. We assure you that our designs will be captivating and engaging.
-                <br><br>
-                So, why not invest in such great options to promote your brand?
-            </p>
-        </div>
-        <div class="image-content">
-            <img src="images/g10.png" alt="Exhibition Stall Design">
+            <h2>Elevate Your Brand's Presence</h2>
+            <br>
+            <p>The experienced and professional team of ADD VINGS is redefining the art of exhibition stall design. We aim to offer bespoke solutions that can elevate your brand presence at trade shows and events. All our team members are passionate about delivering innovative and creative exhibition stall design at the best competitive prices. Due to years of expertise in design and construction, we can cater to the diverse needs of our clients. You can discuss your requirements with us and allow us to craft exhibition stalls. We assure you that our designs will be captivating, and engaging.
+So, why not invest in such great options to promote your brand?</p>
         </div>
     </div>
-    <!-- Placeholder for footer -->
-<div id="footer"></div>
+</section>
+
+<!-- Reverse Section -->
+<section class="about-section reverse" id="our-vision">
+    <div class="about-content">
+        <div class="text-content">
+            <p>We understand that an exhibition stall is more than a physical space. Several brands consider it as an opportunity to showcase their products or services to a targeted audience. We are ready to provide creative exhibition stall design that can help our clients to attract their visitors. Moreover, through them, they can effectively communicate about their offerings and other information. No doubt, it is a visual representation of your brand identity. Thus, it gives you a competitive advantage over the exhibition landscape. So, you must invest in the exhibition stalls without any second thoughts.</p>
+        </div>
+        <img src="images/g4.png" alt="g4" class="about-image">
+    </div>
+</section>
+
+<!-- Placeholder for footer -->
+<div id="footer"></div> 
+
 <script>
-    // Load header and footer using fetch
     async function loadContent() {
         const headerResponse = await fetch("header.html");
         const footerResponse = await fetch("footer.html");
@@ -48,23 +55,39 @@
         document.getElementById("footer").innerHTML = await footerResponse.text();
     }
     loadContent();
+</script>
 
-    // JavaScript for scroll-triggered animation
-    window.addEventListener("scroll", function () {
-        const aboutSection = document.querySelector(".about");
-        const sectionTop = aboutSection.getBoundingClientRect().top;
-        const triggerPoint = window.innerHeight - 100;
-    
-        if (sectionTop < triggerPoint) {
-            aboutSection.classList.add("fade-in");
-        } else {
-            aboutSection.classList.remove("fade-in");
-        }
+<script>
+    // Intersection Observer for animation
+    const options = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.5
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target.querySelector('.about-image');
+                const text = entry.target.querySelector('.text-content');
+                if (entry.target.classList.contains('reverse')) {
+                    text.classList.add('animate-left');
+                    img.classList.add('animate-right');
+                } else {
+                    img.classList.add('animate-left');
+                    text.classList.add('animate-right');
+                }
+            }
+        });
+    });
+
+    document.querySelectorAll('.about-section').forEach(section => {
+        observer.observe(section);
     });
 </script>
 
 <script>
-    // Throttle function to limit scroll event firing rate
+    // Throttle function to control scroll rate
     function throttle(func, limit) {
         let lastFunc;
         let lastRan;
@@ -86,15 +109,14 @@
         };
     }
 
-    // Modified scroll function with a throttle
     window.addEventListener("scroll", throttle(function() {
         const header = document.querySelector(".header");
-        if (window.scrollY > 50) { // Adjust as needed for sensitivity
+        if (window.scrollY > 50) {
             header.classList.add("header-scrolled");
         } else {
             header.classList.remove("header-scrolled");
         }
-    }, 200)); // Adjust throttle time as needed
+    }, 200));
 </script>
 
 </body>
