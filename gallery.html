@@ -7,10 +7,8 @@
     <link rel="stylesheet" href="gallery.css">
 </head>
 <body>
-
 <!-- Placeholder for header -->
 <div id="header"></div>
-
 <section class="hero">
     <video autoplay loop muted class="video-background">
         <source src="/images/v1.mp4" type="video/mp4">
@@ -22,7 +20,6 @@
         <p>Discover our beautifully designed exhibition stands and displays.</p>
     </div>
 </section>
-
 <div class="about-section">
     <div class="content-wrapper">
         <div class="text-content">
@@ -34,7 +31,6 @@
         </div>
     </div>
 </div>
-
 <section class="gallery-section">
     <h2>Our Gallery</h2>
     <div class="gallery-grid">
@@ -60,10 +56,8 @@
         <img src="images/g20.png" alt="Gallery image 20">
     </div>
 </section>
-
 <!-- Placeholder for footer -->
 <div id="footer"></div> 
-
 <script>
     async function loadContent() {
         const headerResponse = await fetch("header.html");
@@ -73,7 +67,6 @@
     }
     loadContent();
 </script>
-
 <script>
     // Throttle function to limit scroll event firing rate
     function throttle(func, limit) {
@@ -96,7 +89,6 @@
             }
         };
     }
-
     // Modified scroll function with a throttle
     window.addEventListener("scroll", throttle(function() {
         const header = document.querySelector(".header");
@@ -107,6 +99,5 @@
         }
     }, 200)); // Adjust throttle time as needed
 </script>
-
 </body>
 </html>

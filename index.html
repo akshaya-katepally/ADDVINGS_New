@@ -47,21 +47,23 @@
 </section>
 
 <section class="gallery">
-    <h2>Gallery</h2>
+    <h2>Our Gallery</h2>
     <div class="gallery-container">
         <button class="scroll-button left" id="scroll-left">&lt;</button>
-        <div class="gallery-grid">
-            <img src="images/h1.png" alt="Stand 1">
-            <img src="images/h2.png" alt="Stand 2">
-            <img src="images/h3.png" alt="Stand 3">
-            <img src="images/h4.png" alt="Stand 4">
-            <img src="images/h5.png" alt="Stand 5">
-            <img src="images/h6.png" alt="Stand 6">
-            <img src="images/h7.png" alt="Stand 7">
-            <img src="images/h8.png" alt="Stand 8">
-            <img src="images/h9.png" alt="Stand 9">
-            <img src="images/h10.png" alt="Stand 10">
-            <img src="images/h11.png" alt="Stand 11">
+        <div class="gallery-grid-wrapper">
+            <div class="gallery-grid">
+                <div class="gallery-item"><img src="images/h1.png" alt="Stand 1"></div>
+                <div class="gallery-item"><img src="images/h2.png" alt="Stand 2"></div>
+                <div class="gallery-item"><img src="images/h3.png" alt="Stand 3"></div>
+                <div class="gallery-item"><img src="images/h4.png" alt="Stand 4"></div>
+                <div class="gallery-item"><img src="images/h5.png" alt="Stand 5"></div>
+                <div class="gallery-item"><img src="images/h6.png" alt="Stand 6"></div>
+                <div class="gallery-item"><img src="images/h7.png" alt="Stand 7"></div>
+                <div class="gallery-item"><img src="images/h8.png" alt="Stand 8"></div>
+                <div class="gallery-item"><img src="images/h9.png" alt="Stand 9"></div>
+                <div class="gallery-item"><img src="images/h10.png" alt="Stand 10"></div>
+                <div class="gallery-item"><img src="images/h11.png" alt="Stand 11"></div>
+            </div>
         </div>
         <button class="scroll-button right" id="scroll-right">&gt;</button>
     </div>
@@ -129,63 +131,62 @@
 </script>
 
 <script>
-    const galleryGrid = document.querySelector('.gallery-grid');
-    const scrollLeftButton = document.getElementById('scroll-left');
-    const scrollRightButton = document.getElementById('scroll-right');
-    const galleryItems = document.querySelectorAll('.gallery-item');
-    const totalItems = galleryItems.length;
-    const itemsPerRow = 3;
-    let currentIndex = 0;
-    
-    // Function to update the gallery position
-    function updateGallery() {
-        const offset = -(currentIndex * (100 / itemsPerRow));
-        galleryGrid.style.transform = `translateX(${offset}%)`;
+const galleryGrid = document.querySelector('.gallery-grid');
+const scrollLeftButton = document.getElementById('scroll-left');
+const scrollRightButton = document.getElementById('scroll-right');
+const galleryItems = document.querySelectorAll('.gallery-item');
+const itemsPerView = 3; // Number of images to display at once
+const totalItems = galleryItems.length;
+let currentIndex = 0;
+
+// Function to update the gallery position
+function updateGallery() {
+    const offset = -(currentIndex * (100 / itemsPerView));
+    galleryGrid.style.transform = `translateX(${offset}%)`;
+}
+
+// Scroll left
+scrollLeftButton.addEventListener('click', () => {
+    if (currentIndex > 0) {
+        currentIndex--;
+    } else {
+        currentIndex = totalItems - itemsPerView; // Wrap around to the last set
     }
-    
-    // Scroll left
-    scrollLeftButton.addEventListener('click', () => {
-        if (currentIndex > 0) {
-            currentIndex--;
-        } else {
-            currentIndex = totalItems - itemsPerRow; // Wrap around to the last set
-        }
-        updateGallery();
-    });
-    
-    // Scroll right
-    scrollRightButton.addEventListener('click', () => {
-        if (currentIndex < totalItems - itemsPerRow) {
-            currentIndex++;
-        } else {
-            currentIndex = 0; // Wrap around to the first set
-        }
-        updateGallery();
-    });
-    
-    // Automatic scrolling every 3 seconds
-    let scrollInterval = setInterval(() => {
-        if (currentIndex < totalItems - itemsPerRow) {
+    updateGallery();
+});
+
+// Scroll right
+scrollRightButton.addEventListener('click', () => {
+    if (currentIndex < totalItems - itemsPerView) {
+        currentIndex++;
+    } else {
+        currentIndex = 0; // Wrap around to the first set
+    }
+    updateGallery();
+});
+
+// Automatic scrolling every 3 seconds
+let scrollInterval = setInterval(() => {
+    if (currentIndex < totalItems - itemsPerView) {
+        currentIndex++;
+    } else {
+        currentIndex = 0;
+    }
+    updateGallery();
+}, 3000);
+
+// Pause automatic scrolling on hover
+galleryGrid.addEventListener('mouseenter', () => clearInterval(scrollInterval));
+galleryGrid.addEventListener('mouseleave', () => {
+    scrollInterval = setInterval(() => {
+        if (currentIndex < totalItems - itemsPerView) {
             currentIndex++;
         } else {
             currentIndex = 0;
         }
         updateGallery();
     }, 3000);
-    
-    // Pause automatic scrolling on hover
-    galleryGrid.addEventListener('mouseenter', () => clearInterval(scrollInterval));
-    galleryGrid.addEventListener('mouseleave', () => {
-        scrollInterval = setInterval(() => {
-            if (currentIndex < totalItems - itemsPerRow) {
-                currentIndex++;
-            } else {
-                currentIndex = 0;
-            }
-            updateGallery();
-        }, 3000);
-    });
-    
+});
 </script>
 
 
