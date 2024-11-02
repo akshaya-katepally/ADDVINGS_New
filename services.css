@@ -73,6 +73,13 @@ body {
     text-align: center;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Darker shadow */
     transition: transform 0.3s, box-shadow 0.3s;
+    text-decoration: none;
+    color: inherit;
+}
+
+.service a {
+    text-decoration: none; /* Ensure any anchor tags have no underline */
+    color: inherit; /* Use the inherited text color */
 }
 
 .service:hover {
