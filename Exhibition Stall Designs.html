@@ -7,6 +7,10 @@
     <link rel="stylesheet" href="Exhibition Stall Designs.css">
 </head>
 <body>
+    <!-- Placeholder for header -->
+<div id="header"></div>
+    
+
 
     <!-- Header Section with Background Image -->
     <div class="header-section">
@@ -33,43 +37,65 @@
             <img src="images/g10.png" alt="Exhibition Stall Design">
         </div>
     </div>
-    footer>
-    <div class="footer_content">
-        <div class="about_section">
-            <p>ADDVINGS Global is a leading exhibition stand builder in India, specializing in custom designs and event solutions. 
-               We take pride in delivering exceptional craftsmanship and seamless project management for businesses worldwide.</p>
-            <div class="contact_links">
-                <p><strong>Email:</strong> info.addvings@gmail.com</p>
-                <p><strong>Phone:</strong> +91 99487 87222 </p>
-                <p><strong>Address:</strong> Dubai, UAE</p>
-            </div>
-        </div>
+    <!-- Placeholder for footer -->
+<div id="footer"></div>
+<script>
+    // Load header and footer using fetch
+    async function loadContent() {
+        const headerResponse = await fetch("header.html");
+        const footerResponse = await fetch("footer.html");
+        document.getElementById("header").innerHTML = await headerResponse.text();
+        document.getElementById("footer").innerHTML = await footerResponse.text();
+    }
+    loadContent();
 
-        <div class="clients_section">
-            <h3>Our Clients</h3>
-            <div class="logo_scroller">
-                <div class="logo_track">
-                    <img src="images/client1.png" alt="Client 1">
-                    <img src="images/client2.png" alt="Client 2">
-                    <img src="images/client3.png" alt="Client 3">
-                    <img src="images/client4.png" alt="Client 4">
-                    <img src="images/client5.png" alt="Client 5">
-                    <img src="images/client6.png" alt="Client 6">
-                    <img src="images/client7.png" alt="Client 7">
-                    <img src="images/client8.png" alt="Client 8">
-                    <img src="images/client9.png" alt="Client 9">
-                    <img src="images/client10.png" alt="Client 10">
-                </div>
-            </div>
-        </div>
+    // JavaScript for scroll-triggered animation
+    window.addEventListener("scroll", function () {
+        const aboutSection = document.querySelector(".about");
+        const sectionTop = aboutSection.getBoundingClientRect().top;
+        const triggerPoint = window.innerHeight - 100;
+    
+        if (sectionTop < triggerPoint) {
+            aboutSection.classList.add("fade-in");
+        } else {
+            aboutSection.classList.remove("fade-in");
+        }
+    });
+</script>
 
-        <div class="social_icons">
-            <a href="https://facebook.com"><img src="images/facebook.png" alt="Facebook"></a>
-            <a href="https://linkedin.com"><img src="images/linkedin.png" alt="LinkedIn"></a>
-            <a href="https://youtube.com"><img src="images/youtube.png" alt="YouTube"></a>
-        </div>
-    </div>
-</footer>
+<script>
+    // Throttle function to limit scroll event firing rate
+    function throttle(func, limit) {
+        let lastFunc;
+        let lastRan;
+        return function() {
+            const context = this;
+            const args = arguments;
+            if (!lastRan) {
+                func.apply(context, args);
+                lastRan = Date.now();
+            } else {
+                clearTimeout(lastFunc);
+                lastFunc = setTimeout(function() {
+                    if ((Date.now() - lastRan) >= limit) {
+                        func.apply(context, args);
+                        lastRan = Date.now();
+                    }
+                }, limit - (Date.now() - lastRan));
+            }
+        };
+    }
+
+    // Modified scroll function with a throttle
+    window.addEventListener("scroll", throttle(function() {
+        const header = document.querySelector(".header");
+        if (window.scrollY > 50) { // Adjust as needed for sensitivity
+            header.classList.add("header-scrolled");
+        } else {
+            header.classList.remove("header-scrolled");
+        }
+    }, 200)); // Adjust throttle time as needed
+</script>
 
 </body>
 </html>
