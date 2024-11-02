@@ -1,8 +1,8 @@
 /* Global Styles */
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
+    background-color: #1a1a1a; /* Dark background */
+    color: #f4f4f4; /* Light text color for contrast */
     line-height: 1.6;
     margin: 0; /* Remove margin */
     padding: 0;
@@ -27,7 +27,7 @@ body {
 .about-image {
     width: 40%; /* Adjust width as necessary */
     border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Darker shadow */
 }
 
 .text-content {
