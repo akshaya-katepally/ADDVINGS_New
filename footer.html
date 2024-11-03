@@ -1,134 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Footer</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome -->
+    <meta charset="UTF-8"> <!-- Sets the character encoding for the document -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Ensures responsive design on mobile devices -->
+    <title>Footer</title> <!-- Sets the title of the page -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Link to Font Awesome for social icons -->
     <style>
         footer {
-            background-color: #333;
-            color: white;
-            padding: 40px;
-            display: flex;
-            justify-content: space-around;
-            text-align: left;
+            background-color: #333; /* Dark background color for the footer */
+            color: white; /* White text color for contrast */
+            padding: 40px; /* Adds padding around the footer content */
+            display: flex; /* Uses flexbox for layout */
+            justify-content: space-around; /* Spaces columns evenly */
+            text-align: left; /* Aligns text to the left */
         }
         
         .footer-column {
-            flex: 1;
-            margin: 0 20px;
-            min-width: 200px;
+            flex: 1; /* Allows columns to grow and fill space equally */
+            margin: 0 20px; /* Adds horizontal margin between columns */
+            min-width: 200px; /* Sets a minimum width for each column */
         }
         
         .footer-column h3 {
-            margin-bottom: 15px;
-            font-size: 18px;
-            color: #f1f1f1;
+            margin-bottom: 15px; /* Adds space below the heading */
+            font-size: 18px; /* Sets the font size for headings */
+            color: #f1f1f1; /* Lighter color for headings */
         }
-        
-        .footer-column p, .footer-column a {
-            display: block;
-            font-size: 14px;
-            color: #ddd;
-            margin: 5px 0;
-            text-decoration: none;
+
+        .footer-column p {
+            font-size: 14px; /* Sets font size for paragraph text in the footer */
+            color: #ddd; /* Light grey color for text */
+            margin: 5px 0; /* Adds vertical margin between paragraphs */
+        }
+
+        .footer-column a {
+            font-size: 20px; /* Sets font size for links in the footer */
+            color: #ddd; /* Light grey color for links */
+            margin: 5px 0; /* Adds vertical margin between links */
+            text-decoration: none; /* Removes underline from links */
+            display: block; /* Ensures links occupy their own line */
+            justify-content:right;
         }
         
         .footer-column a:hover {
-            text-decoration: underline;
+            text-decoration: underline; /* Underlines links on hover for interaction feedback */
         }
         
         .logo {
-            margin-bottom: 15px;
+            margin-bottom: 15px; /* Adds space below the logo */
+            display: block; /* Ensures the logo is a block element */
+            margin: 0 auto; /* Centers the logo */
         }
-        
+
         /* Footer-specific social icons */
         .footer-social-icons {
-            display: flex;
-            gap: 10px;
-            padding-top: 10px;
+            display: flex; /* Uses flexbox for the social icons layout */
+            justify-content: left; /* Centers the icons horizontally */
+            gap: 40px; /* Space between icons */
+            padding-top: 10px; /* Adds padding above the icons */
         }
         
         .footer-social-icon {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            font-size: 18px;
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: transform 0.3s, filter 0.3s;
-        }
+            .footer-social-icon {
+    width: 40px; /* Sets width of social icons */
+    height: 40px; /* Sets height of social icons */
+    border-radius: 50%; /* Makes icons circular */
+    font-size: 20px; /* Adjusts font size for better fit */
+    color: white; /* Sets icon color to white */
+    display: flex; /* Uses flexbox for centering the icon */
+    align-items: center; /* Vertically centers the icon */
+    justify-content: center; /* Horizontally centers the icon */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transition for hover effects */
+    margin: 0 auto; /* Centers the icon */
+    padding: 5px; /* Adds some padding around the icon */
+    text-align: center; /* Centers text inside the icon */
+}
+
         
         /* Specific colors for each footer icon */
         .footer-social-icon.facebook {
-            background-color: #3b5998; /* Facebook blue */
+            background-color: #3b5998; /* Facebook blue background */
         }
         
         .footer-social-icon.instagram {
-            background: radial-gradient(circle at 30% 30%, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5); /* Instagram gradient */
+            background: radial-gradient(circle at 35% 30%, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5); /* Instagram gradient background */
         }
         
         .footer-social-icon.linkedin {
-            background-color: #0077b5; /* LinkedIn blue */
+            background-color: #0077b5; /* LinkedIn blue background */
         }
         
         .footer-social-icon.youtube {
-            background-color: #ff0000; /* YouTube red */
+            background-color: #ff0000; /* YouTube red background */
         }
         
         /* Hover effects for footer icons */
         .footer-social-icon:hover {
-            transform: scale(1.1); /* Slight zoom on hover */
-            filter: brightness(1.2); /* Slightly brighten on hover */
+            transform: scale(1.1); /* Slight zoom effect on hover */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Shadow effect on hover for depth */
         }        
     </style>
 </head>
 <body>
 
 <footer>
-    <!-- First Column: Logo and About Text -->
     <div class="footer-column">
-        <img src="images/logo.png" alt="ADDVINGS Logo" class="logo" width="150"> <!-- Adjust logo size as needed -->
-        <p>ADDVINGS – a trusted name in UAE for custom exhibition stand designs and event management, delivering innovative experiences that elevate your brand.</p>
+        <img src="images/logo.png" alt="ADDVINGS Logo" class="logo" width="150"> <!-- Logo image with alt text for accessibility -->
+        <p>ADDVINGS – a trusted name in UAE for custom exhibition stand designs and event management, delivering innovative experiences that elevate your brand.</p> <!-- Description of the company -->
     </div>
 
-    <!-- Second Column: Our Services -->
     <div class="footer-column">
-        <h3>Our Services</h3>
-        <a href="3D Exhibition Stall Designs.html">3D Exhibiton Stall Designs</a>
-        <a href="Retail Kiosk Design.html">Retail Kiosk Design</a>
-        <a href="Exhibition Stall Designs.html">Exhibition Stall Design</a>
-        <a href="Display Stand Design Services.html">Display Stands Design</a>
-        <a href="Presentation.html">Presentation Design</a>
-        <a href="Strategic Branding Consultancy.html">Strategic Branding Consultancy</a>
-        <a href="Custom Exhibition Stands.html">Custom Exhibition Stands</a>
-        <a href="Builders.html">Builders</a>
+        <h3>Our Services</h3> <!-- Heading for services section -->
+        <a href="3D Exhibition Stall Designs.html">3D Exhibition Stall Designs</a> <!-- Link to service page -->
+        <a href="Retail Kiosk Design.html">Retail Kiosk Design</a> <!-- Link to service page -->
+        <a href="Exhibition Stall Designs.html">Exhibition Stall Design</a> <!-- Link to service page -->
+        <a href="Display Stand Design Services.html">Display Stands Design</a> <!-- Link to service page -->
+        <a href="Presentation.html">Presentation Design</a> <!-- Link to service page -->
+        <a href="Strategic Branding Consultancy.html">Strategic Branding Consultancy</a> <!-- Link to service page -->
+        <a href="Custom Exhibition Stands.html">Custom Exhibition Stands</a> <!-- Link to service page -->
+        <a href="Builders.html">Builders</a> <!-- Link to service page -->
     </div>
 
-    <!-- Third Column: Quick Links -->
     <div class="footer-column">
-        <h3>Quick Links</h3>
-        <a href="index.html">Home</a>
-        <a href="about.html">About Us</a>
-        <a href="services.html">Services</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="contact.html">Contact Us</a>
+        <h3>Quick Links</h3> <!-- Heading for quick links section -->
+        <a href="index.html">Home</a> <!-- Link to home page -->
+        <a href="about.html">About Us</a> <!-- Link to about page -->
+        <a href="services.html">Services</a> <!-- Link to services page -->
+        <a href="gallery.html">Gallery</a> <!-- Link to gallery page -->
+        <a href="contact.html">Contact Us</a> <!-- Link to contact page -->
     </div>
 
-    <!-- Fourth Column: Contact Us and Social Icons -->
     <div class="footer-column">
-        <h3>Contact Us</h3>
-        <p><strong>Phone:</strong> +91 99487 87222</p>
-        <p><strong>Email:</strong> info.addvings@gmail.com</p>
-        <p><strong>Address:</strong> Dubai, UAE</p>
-        <div class="footer-social-icons">
-            <a href="https://facebook.com" target="_blank" class="footer-social-icon facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://instagram.com/addvingsglobal" target="_blank" class="footer-social-icon instagram"><i class="fab fa-instagram"></i></a>
-            <a href="https://linkedin.com" target="_blank" class="footer-social-icon linkedin"><i class="fab fa-linkedin-in"></i></a>
-            <a href="https://youtube.com" target="_blank" class="footer-social-icon youtube"><i class="fab fa-youtube"></i></a>
+        <h3>Contact Us</h3> <!-- Heading for contact section -->
+        <p><strong>Phone:</strong> +91 99487 87222</p> <!-- Phone contact information -->
+        <p><strong>Email:</strong> info.addvings@gmail.com</p> <!-- Email contact information -->
+        <p><strong>Address:</strong> Dubai, UAE</p> <!-- Physical address -->
+        <div class="footer-social-icons"> <!-- Container for social icons -->
+            <a href="https://facebook.com" target="_blank" class="footer-social-icon facebook"><i class="fab fa-facebook-f"></i></a> <!-- Facebook icon link -->
+            <a href="https://instagram.com/addvingsglobal" target="_blank" class="footer-social-icon instagram"><i class="fab fa-instagram"></i></a> <!-- Instagram icon link -->
+            <a href="https://linkedin.com" target="_blank" class="footer-social-icon linkedin"><i class="fab fa-linkedin-in"></i></a> <!-- LinkedIn icon link -->
+            <a href="https://youtube.com" target="_blank" class="footer-social-icon youtube"><i class="fab fa-youtube"></i></a> <!-- YouTube icon link -->
         </div>        
     </div>
 </footer>
