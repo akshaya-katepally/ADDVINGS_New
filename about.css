@@ -7,19 +7,20 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #100103; /* Dark background */
-    color: #f8f8f7; /* Light text color */
+    background-color: #100103;
+    color: #f8f8f7;
     line-height: 1.6;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 /* Hero Section */
 .hero {
     position: relative;
     overflow: hidden;
-    height: 75vh; /* Set height to 75% of viewport height */
-    display: flex; /* Use flexbox to align content */
-    align-items: center; /* Center content vertically */
-    justify-content: center; /* Center content horizontally */
+    height: 75vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .video-background {
@@ -30,69 +31,111 @@ body {
     min-height: 100%;
     width: auto;
     height: auto;
-    z-index: -1; /* Place video behind other content */
-    transform: translate(-50%, -50%); /* Center video */
+    z-index: -1;
+    transform: translate(-50%, -50%);
 }
 
 .hero-content {
-    position: relative; /* Ensure content is on top of the video */
+    position: relative;
     display: flex;
     flex-direction: column;
     gap: 10px;
     max-width: 800px;
     margin: 0 auto;
-    z-index: 1; /* Ensure content appears above the video */
+    z-index: 1;
     text-align: center;
+    padding: 0 20px;
 }
 
 .hero h1 {
     font-size: 2.5em;
-    margin: 0;
 }
 
 .hero p {
     font-size: 1.2em;
-    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2em;
+    }
+
+    .hero p {
+        font-size: 1em;
+    }
 }
 
 /* About Section Styles */
 .about-section {
     display: flex;
-    align-items: center;
-    padding: 60px;
-    transition: transform 0.5s ease-in-out; /* Adjusted for smoother animation */
-    margin-top: 80px; /* Add space above each section */
+    align-items: flex-start;
+    padding: 60px 20px;
+    margin-top: 80px;
+    transition: transform 0.5s ease-in-out;
 }
 
 .about-content {
     display: flex;
-    align-items: flex-start; /* Align items to the start */
+    align-items: flex-start;
     justify-content: space-between;
     width: 100%;
-    gap: 30px; /* Add gap between image and text */
+    gap: 30px;
 }
 
+/* Set both image and text to 50% */
 .about-image {
-    width: 40%; /* Adjust width as necessary */
+    width: 50%; /* Changed to 50% */
+    max-width: 500px;
     border-radius: 15px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Darker shadow */
-    opacity: 0; /* Start as invisible */
-    transform: translateX(100%); /* Reset transform */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transform: translateX(100%);
 }
 
 .text-content {
-    width: 50%; /* Adjust width as necessary */
+    width: 50%; /* Changed to 50% */
     padding: 0 20px;
-    opacity: 0; /* Start as invisible */
-    transform: translateX(-100%); /* Reset transform */
+    opacity: 0;
+    transform: translateX(-100%);
 }
 
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .about-section {
+        flex-direction: column; /* Stack vertically on small screens */
+    }
+
+    .about-image,
+    .text-content {
+        width: 100%; /* Make them full width on smaller screens */
+        transform: translateX(0); /* Reset transform for animations */
+    }
+}
+
+
 .text-content h2 {
-    color: #cf7832; /* Change this to your preferred color */
+    color: #cf7832;
 }
 
 .reverse {
-    flex-direction: row-reverse; /* Reverse the order of content */
+    flex-direction: column; /* Change direction for smaller screens */
+}
+
+@media (max-width: 768px) {
+    .about-section {
+        padding: 40px 10px; /* Adjust padding */
+    }
+
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-image,
+    .text-content {
+        width: 100%;
+        transform: translateX(0);
+    }
 }
 
 /* Animation Keyframes */
@@ -119,27 +162,26 @@ body {
 }
 
 /* Animation Classes */
-
 .animate-left {
-    animation: slideInLeft 2s forwards; /* Control timing here */
+    animation: slideInLeft 2s forwards;
 }
 
 .animate-right {
-    animation: slideInRight 2s forwards; /* Control timing here */
+    animation: slideInRight 2s forwards;
 }
 
-
+/* Timeline Section */
 .timeline {
     position: relative;
     max-width: 1200px;
     margin: 100px auto;
+    padding: 0 20px;
 }
 
 .container {
     padding: 10px 60px;
     position: relative;
     width: calc(50% - 40px);
-    
     opacity: 0;
     transform: translateY(30px);
     transition: opacity 0.5s ease-out, transform 0.5s ease-out;
@@ -150,17 +192,51 @@ body {
     transform: translateY(0);
 }
 
-.container img {
-    position: absolute;
-    width: 40px;
+.year-circle {
+    width: 60px;
+    height: 60px;
+    background: radial-gradient(circle at top left, #ff914d, #cf7832);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border-radius: 50%;
-    right: -20px;
-    top: 32px;
+    font-size: 1.3em;
+    font-weight: 400;
+    font-family: 'Bebas Neue', sans-serif;
+    position: absolute;
+    right: -30px;
+    top: 25px;
     z-index: 10;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.right-container img {
-    left: -20px;
+.year-circle:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+.right-container .year-circle {
+    left: -30px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 100%; /* Full width on smaller screens */
+        text-align: center;
+        padding: 20px 0; /* Adjust padding for smaller screens */
+    }
+
+    .year-circle {
+        position: static;
+        margin: 10px auto; /* Center the year circle */
+    }
+
+    .left-container-arrow,
+    .right-container-arrow {
+        display: none; /* Hide arrows on smaller screens */
+    }
 }
 
 .timeline:after {
@@ -168,23 +244,14 @@ body {
     position: absolute;
     width: 6px;
     height: 100%;
-    background: #fff; /* White line */
+    background: #fff;
     top: 0;
-    left: calc(50% - 3px); /* Center the line */
-    transform: translateX(-50%); /* Center the line */
-    z-index: 1; /* Ensure it's below the containers */
+    left: calc(50% - 3px);
+    z-index: 1;
     animation: moveline 18s linear forwards;
 }
 
-@keyframes moveline {
-    0% {
-        height: 0;
-    }
-    100% {
-        height: 100%;
-    }
-}
-
+/* Position Adjustments */
 .text-box {
     padding: 20px 30px;
     background: #fff;
@@ -203,55 +270,31 @@ body {
     left: 53%;
 }
 
+@media (max-width: 768px) {
+    .left-container,
+    .right-container {
+        left: 0; /* Reset left for smaller screens */
+    }
+}
+
 .text-box h2 {
     font-weight: 600;
 }
 
-.text-box small {
-    display: inline-block;
-    margin-bottom: 15px;
-}
-
-.left-container-arrow {
-    height: 0;
-    width: 0;
-    position: absolute;
-    top: 28px;
-    z-index: 1;
-    border-top: 15px solid transparent;
-    border-bottom: 15px solid transparent;
-    border-left: 15px solid #fff;
-    right: -15px;
-}
-
-.right-container-arrow {
-    height: 0;
-    width: 0;
-    position: absolute;
-    top: 28px;
-    z-index: 1;
-    border-top: 15px solid transparent;
-    border-bottom: 15px solid transparent;
-    border-right: 15px solid #fff;
-    left: -15px;
-}
-
 .journey-title {
-    text-align: center; /* Center the text */
-    color: #cf7832; /* Orange color */
-    margin: 40px 0; /* Add some vertical spacing */
-    font-size: 2em; /* Adjust the font size as needed */
+    text-align: center;
+    color: #cf7832;
+    margin: 40px 0;
+    font-size: 2em;
 }
 
 /* Scroll and Animation Effects */
-@keyframes movedown {
+@keyframes moveline {
     0% {
-        opacity: 1;
-        transform: translateY(-30px);
+        height: 0;
     }
     100% {
-        opacity: 1;
-        transform: translateY(0px);
+        height: 100%;
     }
 }
 
@@ -278,4 +321,3 @@ body {
 .container:nth-child(6) {
     animation-delay: 5s;
 }
-

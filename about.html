@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ADDVINGS - About Us</title>
     <link rel="stylesheet" href="about.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -25,13 +26,10 @@
 <!-- About Section -->
 <section class="about-section" id="about-us">
     <div class="about-content">
-        <img src="images/about1.jpg" alt="About Image 1" class="about-image">
+        <img src="images/t4.png" alt="About Image 1" class="about-image">
         <div class="text-content">
             <h2>About Us</h2>
-            <p>Welcome to ADDVINGS!!!   ADDVINGS Global is a leading exhibition stand builder in Dubai, specializing in custom designs and event solutions. 
-                We take pride in delivering exceptional craftsmanship and seamless project management for businesses worldwide.
-                With years of experience in the event planning industry, we pride ourselves on our attention to detail, creativity, and commitment to excellence. We understand that each event is unique, which is why we take the time to listen to your needs and preferences, ensuring a personalized approach that reflects your style and personality.
-                Our services encompass every aspect of event planning, from concept development and venue selection to vendor management and on-the-day coordination. We work with a trusted network of professionals to bring you the best in catering, décor, entertainment, and more—ensuring a seamless and stress-free experience.</p>
+            <p>Welcome to ADDVINGS!!!   ADDVINGS Global is a leading exhibition stand builder in India, specializing in custom designs and event solutions. We take pride in delivering exceptional craftsmanship and seamless project management for businesses worldwide. It started with a dream, an ambition, and a determination to build better customer experiences. A vision to fulfill or a righteous path to emulate both our clients and team members. We were built with a strong foundation of team members and happy customers. Almost instantly, ADDVINGS became a prominent name in its business segment, but as every entrepreneur sticks to their dream, we always wanted to push our company to more prosperous milestones. More than being a global player, We always perceived our company as a unit that could make a difference with its quality and competitively priced products.</p>
         </div>
     </div>
 </section>
@@ -40,10 +38,9 @@
     <div class="about-content">
         <div class="text-content">
             <h2>Our Mission</h2>
-            <p>At ADDVINGS, our mission is to transform your event dreams into reality by providing exceptional planning and execution tailored to your unique vision. We strive to deliver unforgettable experiences through creativity, meticulous attention to detail, and a commitment to excellence .We believe that every event tells a story, and our mission is to help you craft yours.
-                We don’t just plan events ,we create memories that last a lifetime. Let us help you add the perfect touches to your next gathering, transforming it into a spectacular occasion that you and your guests will cherish forever.</p>
+            <p>At ADDVINGS, our mission is to redefine industry standards by delivering unparalleled craftsmanship and comprehensive project management solutions tailored to meet the unique needs of our clients worldwide. We strive to create exceptional customer experiences through innovation, quality, and dedication, ensuring that every project reflects our commitment to excellence. Our vision is rooted in a collaborative spirit, empowering our team members to take ownership of their work while fostering lasting relationships with our clients. By continuously pursuing new milestones and embracing challenges, we aim to be more than just a global player; we aspire to be a transformative force that enhances the value and impact of every project we undertake.</p>
         </div>
-        <img src="images/about2.jpg" alt="About Image 2" class="about-image">
+        <img src="images/t1.png" alt="About Image 2" class="about-image">
     </div>
 </section>
 
@@ -55,17 +52,17 @@
 <div class="timeline">
 
     <div class="container left-container">
-        <img src="images\2006.jpeg">
+        <div class="year-circle">2006</div>
         <div class="text-box">
             <h2>Establishment</h2>
             <small>2006</small>
             <p>Founded by a passionate team of event enthusiasts with a vision to redefine event planning.</p>
             <span class="left-container-arrow"></span>
         </div>
-    </div>
+    </div>    
 
     <div class="container right-container">
-        <img src="images\2007.jpeg">
+        <div class="year-circle">2007</div>
         <div class="text-box">
             <h2>First Major Event</h2>
             <small>2007</small>
@@ -75,7 +72,7 @@
     </div>
 
     <div class="container left-container">
-        <img src="images\2011.jpeg">
+        <div class="year-circle">20011</div>
         <div class="text-box">
             <h2>Expansion of Services</h2>
             <small>2011</small>
@@ -85,7 +82,7 @@
     </div>
 
     <div class="container right-container">
-        <img src="images\2015.jpeg">
+        <div class="year-circle">2015</div>
         <div class="text-box">
             <h2>Award Recognition</h2>
             <small>2015</small>
@@ -95,7 +92,7 @@
     </div>
 
     <div class="container left-container">
-        <img src="images\2020.jpeg">
+        <div class="year-circle">2020</div>
         <div class="text-box">
             <h2>Strategic Partnerships</h2>
             <small>2020</small>
@@ -105,7 +102,7 @@
     </div>
 
     <div class="container right-container">
-        <img src="images\2024.jpeg">
+        <div class="year-circle">2024</div>
         <div class="text-box">
             <h2> 18th Anniversary</h2>
             <small>2024</small>
@@ -186,6 +183,41 @@
         });
     });
     </script>
+
+    <script>
+    // Throttle function to limit scroll event firing rate
+    function throttle(func, limit) {
+        let lastFunc;
+        let lastRan;
+        return function() {
+            const context = this;
+            const args = arguments;
+            if (!lastRan) {
+                func.apply(context, args);
+                lastRan = Date.now();
+            } else {
+                clearTimeout(lastFunc);
+                lastFunc = setTimeout(function() {
+                    if ((Date.now() - lastRan) >= limit) {
+                        func.apply(context, args);
+                        lastRan = Date.now();
+                    }
+                }, limit - (Date.now() - lastRan));
+            }
+        };
+    }
+
+    // Modified scroll function with a throttle
+    window.addEventListener("scroll", throttle(function() {
+        const header = document.querySelector(".header");
+        if (window.scrollY > 50) { // Adjust as needed for sensitivity
+            header.classList.add("header-scrolled");
+        } else {
+            header.classList.remove("header-scrolled");
+        }
+    }, 200)); // Adjust throttle time as needed
+</script>
+
     
 
 </body>

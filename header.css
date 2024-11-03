@@ -42,16 +42,46 @@ body {
 }
 
 /* Navbar links styling */
+/* Center the navbar links styling */
 .navbar {
   display: flex;
   justify-content: center;
+  width: 100%; /* Full width to center the content */
 }
 
 .navbar ul {
   list-style: none;
   display: flex;
+  justify-content: center; /* Centering the links */
   gap: 40px;
   margin: 0;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+  /* Show the hamburger icon on smaller screens */
+  .menu-icon {
+    display: block;
+  }
+
+  /* Hide the navbar links by default */
+  .navbar ul {
+    display: none;
+    flex-direction: column;
+    justify-content: center; /* Center the items vertically */
+    background-color: #563434;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    z-index: 999;
+  }
+
+  /* Show navbar links when 'show' class is added */
+  .navbar ul.show {
+    display: flex;
+  }
 }
 
 .navbar a {

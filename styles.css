@@ -150,11 +150,11 @@ body {
 }
 
 .service-item {
+    width: 18%; /* Slightly less than 20% to account for gap */
     background: linear-gradient(135deg, #ff7e5f, #feb47b); /* Gradient background */
     padding: 25px;
     border-radius: 10px;
     color: #f8f8f7; /* Light text color */
-    width: 180px;
     text-align: center;
     transition: transform 0.3s, background-color 0.3s;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Enhanced shadow */
