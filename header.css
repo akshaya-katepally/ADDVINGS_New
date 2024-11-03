@@ -14,46 +14,37 @@ body {
 
 /* Initial styles for the navbar */
 .header {
-  position: fixed; /* Make the navbar stay at the top */
+  position: fixed;
   width: 100%;
   top: 0;
   left: 0;
-  background-color: transparent; /* Transparent background initially */
+  background-color: transparent;
   padding: 20px 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   transition: background-color 0.3s, padding 0.3s;
-  box-shadow: none; /* Remove shadow initially */
-  z-index: 1000; /* Ensure the navbar stays on top */
+  box-shadow: none;
+  z-index: 1000;
 }
 
 /* Styles for the navbar when scrolled */
 .header-scrolled {
-  background-color: #563434; /* Dark color when scrolled */
-  padding: 10px 40px; /* Reduce padding */
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Add shadow */
-}
-
-.header.header-scrolled {
-  background-color: #563434 !important; /* Ensure color applies */
+  background-color: #563434;
   padding: 10px 40px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.3s, padding 0.3s;
 }
-
 
 /* Logo styling */
 .logo img {
   height: 40px;
-  transition: height 0.3s; /* Smooth transition for logo size */
+  transition: height 0.3s;
 }
 
 /* Navbar links styling */
 .navbar {
-  flex-grow: 1; /* Allow navbar to take available space */
-  display: flex; /* Ensure it uses flexbox */
-  justify-content: center; /* Center items horizontally */
+  display: flex;
+  justify-content: center;
 }
 
 .navbar ul {
@@ -61,28 +52,73 @@ body {
   display: flex;
   gap: 40px;
   margin: 0;
-
 }
 
 .navbar a {
-  color: #ffffff; /* Light text for the navbar */
+  color: #ffffff;
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s;
 }
 
 .navbar a:hover {
-  color: #cf7832; /* Accent color on hover */
+  color: #cf7832;
 }
 
 /* Content styling */
 .content {
-  padding-top: 100px; /* Prevent content from hiding behind the fixed navbar */
+  padding-top: 100px;
   text-align: center;
   padding: 50px;
 }
 
 /* Filler to enable scrolling */
 .filler {
-  height: 2000px; /* Height to create scrolling effect */
+  height: 2000px;
+}
+
+/* Hamburger icon (hidden by default) */
+.menu-icon {
+  display: none;
+  font-size: 24px;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+  /* Show the hamburger icon on smaller screens */
+  .menu-icon {
+    display: block;
+  }
+
+  /* Hide the navbar links by default */
+  .navbar ul {
+    display: none;
+    flex-direction: column;
+    background-color: #563434;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    z-index: 999;
+  }
+
+  /* Show navbar links when 'show' class is added */
+  .navbar ul.show {
+    display: flex;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Additional adjustments for very small screens */
+  .navbar ul {
+    gap: 20px;
+    padding: 20px 0;
+  }
+
+  .navbar a {
+    font-size: 16px;
+  }
 }

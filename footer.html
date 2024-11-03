@@ -1,137 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8"> <!-- Sets the character encoding for the document -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Ensures responsive design on mobile devices -->
-    <title>Footer</title> <!-- Sets the title of the page -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Link to Font Awesome for social icons -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Footer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         footer {
             background-color: #333;
             color: white;
             padding: 40px;
             display: flex;
+            flex-wrap: wrap;
             justify-content: space-around;
             text-align: left;
         }
-        
+
         .footer-column {
             flex: 1;
             margin: 0 20px;
             min-width: 200px;
+            max-width: 250px;
         }
-        
+
         .footer-column h3 {
             margin-bottom: 15px;
             font-size: 18px;
             color: #f1f1f1;
         }
-        
-        .footer-column p, .footer-column a {
+
+        .footer-column p,
+        .footer-column a {
             display: block;
             font-size: 14px;
             color: #ddd;
             margin: 5px 0;
             text-decoration: none;
         }
-        
+
         .footer-column a:hover {
             text-decoration: underline;
         }
-        
+
         .logo {
             margin-bottom: 15px;
         }
 
-        /* Footer-specific social icons */
         .footer-social-icons {
-            display: flex; /* Uses flexbox for the social icons layout */
-            justify-content: left; /* Centers the icons horizontally */
-            gap: 30px; /* Space between icons */
-            padding-top: 10px; /* Adds padding above the icons */
+            display: flex;
+            gap: 15px;
+            padding-top: 10px;
         }
-        
+
         .footer-social-icon {
-            .footer-social-icon {
-                width: 40px; /* Sets width of social icons */
-                height: 40px; /* Sets height of social icons */
-                border-radius: 50%; /* Makes icons circular */
-                font-size: 20px; /* Adjusts font size for better fit */
-                color: white; /* Sets icon color to white */
-                display: flex; /* Uses flexbox for centering the icon */
-                align-items: center; /* Vertically centers the icon */
-                justify-content: center; /* Horizontally centers the icon */
-                transition: background-color 0.3s, transform 0.3s; /* Smooth transition for hover effects */
-                margin: 0 auto; /* Centers the icon */
-                padding: 5px; /* Adds some padding around the icon */
-                text-align: center; /* Centers text inside the icon */
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-size: 20px;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            footer {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                padding: 20px;
             }
 
-            /* Specific colors for each footer icon */
-            .footer-social-icon.facebook {
-                background-color: #3b5998; /* Facebook blue background */
+            .footer-column {
+                margin: 10px 0;
+                max-width: none;
             }
-        
-            .footer-social-icon.instagram {
-                background: radial-gradient(circle at 35% 30%, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5); /* Instagram gradient background */
+
+            .footer-social-icons {
+                justify-content: center;
+                gap: 10px;
             }
-        
-            .footer-social-icon.linkedin {
-                background-color: #0077b5; /* LinkedIn blue background */
+        }
+
+        @media (max-width: 480px) {
+            .footer-column h3 {
+                font-size: 16px;
             }
-        
-            .footer-social-icon.youtube {
-                background-color: #ff0000; /* YouTube red background */
+
+            .footer-column p,
+            .footer-column a {
+                font-size: 12px;
             }
-        
-            /* Hover effects for footer icons */
-            .footer-social-icon:hover {
-                transform: scale(1.1); /* Slight zoom effect on hover */
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Shadow effect on hover for depth */
-            } 
-        }       
+
+            .footer-social-icon {
+                width: 30px;
+                height: 30px;
+                font-size: 16px;
+            }
+        }
     </style>
 </head>
 <body>
 
 <footer>
     <div class="footer-column">
-        <img src="images/logo.png" alt="ADDVINGS Logo" class="logo" width="150"> <!-- Logo image with alt text for accessibility -->
-        <p>ADDVINGS – a trusted name in India for custom exhibition stand designs and event management, delivering innovative experiences that elevate your brand.</p> <!-- Description of the company -->
+        <img src="images/logo.png" alt="ADDVINGS Logo" class="logo" width="150">
+        <p>ADDVINGS – a trusted name in India for custom exhibition stand designs and event management, delivering innovative experiences that elevate your brand.</p>
     </div>
 
     <div class="footer-column">
-        <h3>Our Services</h3> <!-- Heading for services section -->
-        <a href="3D Exhibition Stall Designs.html">3D Exhibition Stall Designs</a> <!-- Link to service page -->
-        <a href="Retail Kiosk Design.html">Retail Kiosk Design</a> <!-- Link to service page -->
-        <a href="Exhibition Stall Designs.html">Exhibition Stall Design</a> <!-- Link to service page -->
-        <a href="Display Stand Design Services.html">Display Stands Design</a> <!-- Link to service page -->
-        <a href="Presentation.html">Presentation Design</a> <!-- Link to service page -->
-        <a href="Strategic Branding Consultancy.html">Strategic Branding Consultancy</a> <!-- Link to service page -->
-        <a href="Custom Exhibition Stands.html">Custom Exhibition Stands</a> <!-- Link to service page -->
-        <a href="Builders.html">Builders</a> <!-- Link to service page -->
+        <h3>Our Services</h3>
+        <a href="3D Exhibition Stall Designs.html">3D Exhibition Stall Designs</a>
+        <a href="Retail Kiosk Design.html">Retail Kiosk Design</a>
+        <a href="Exhibition Stall Designs.html">Exhibition Stall Design</a>
+        <a href="Display Stand Design Services.html">Display Stands Design</a>
+        <a href="Presentation.html">Presentation Design</a>
+        <a href="Strategic Branding Consultancy.html">Strategic Branding Consultancy</a>
+        <a href="Custom Exhibition Stands.html">Custom Exhibition Stands</a>
+        <a href="Builders.html">Builders</a>
     </div>
 
     <div class="footer-column">
-        <h3>Quick Links</h3> <!-- Heading for quick links section -->
-        <a href="index.html">Home</a> <!-- Link to home page -->
-        <a href="about.html">About Us</a> <!-- Link to about page -->
-        <a href="services.html">Services</a> <!-- Link to services page -->
-        <a href="gallery.html">Gallery</a> <!-- Link to gallery page -->
-        <a href="contact.html">Contact Us</a> <!-- Link to contact page -->
+        <h3>Quick Links</h3>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="services.html">Services</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact Us</a>
     </div>
 
     <div class="footer-column">
-        <h3>Contact Us</h3> <!-- Heading for contact section -->
-        <p><strong>Phone:</strong> +91 99487 87222</p> <!-- Phone contact information -->
-        <p><strong>Email:</strong> info.addvings@gmail.com</p> <!-- Email contact information -->
-        <p><strong>Address:</strong> Dubai, UAE</p> <!-- Physical address -->
-        <div class="footer-social-icons"> <!-- Container for social icons -->
-            <a href="https://facebook.com" target="_blank" class="footer-social-icon facebook"><i class="fab fa-facebook-f"></i></a> <!-- Facebook icon link -->
-            <a href="https://instagram.com/addvingsglobal" target="_blank" class="footer-social-icon instagram"><i class="fab fa-instagram"></i></a> <!-- Instagram icon link -->
-            <a href="https://linkedin.com" target="_blank" class="footer-social-icon linkedin"><i class="fab fa-linkedin-in"></i></a> <!-- LinkedIn icon link -->
-            <a href="https://youtube.com" target="_blank" class="footer-social-icon youtube"><i class="fab fa-youtube"></i></a> <!-- YouTube icon link -->
-        </div>        
+        <h3>Contact Us</h3>
+        <p><strong>Phone:</strong> +91 99487 87222</p>
+        <p><strong>Email:</strong> info.addvings@gmail.com</p>
+        <p><strong>Address:</strong><br>Reg: 20-122/4, Aishwarya Homes,<br>Dayanand Nagar, Malkajgiri,<br>Hyderabad- 500047, Telangana</p>
+        <div class="footer-social-icons">
+            <a href="https://www.facebook.com/addvings.info" target="_blank" class="footer-social-icon facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://instagram.com/addvingsglobal" target="_blank" class="footer-social-icon instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://linkedin.com" target="_blank" class="footer-social-icon linkedin"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://youtube.com" target="_blank" class="footer-social-icon youtube"><i class="fab fa-youtube"></i></a>
+        </div>
     </div>
 </footer>
 

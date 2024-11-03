@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Header</title>
-    <link rel="stylesheet" href="header.css"> <!-- Link to header.css -->
+    <link rel="stylesheet" href="header.css">
 </head>
 <body>
 
@@ -13,7 +13,8 @@
         <a href="index.html"><img src="images/logo.png" alt="ADDVINGS"></a>
     </div>
     <nav class="navbar">
-        <ul>
+        <span class="menu-icon" onclick="toggleMenu()">☰</span> <!-- Hamburger icon -->
+        <ul id="navbar-links"> <!-- Added the correct ID -->
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About Us</a></li>
             <li><a href="services.html">Services</a></li>
@@ -22,6 +23,23 @@
         </ul>
     </nav>
 </header>
+
+<script>
+    // Function to toggle the display of the navbar links
+    function toggleMenu() {
+        const navbarLinks = document.getElementById('navbar-links');
+        navbarLinks.classList.toggle('show');
+    }
+
+    // Close the menu if clicked outside
+    document.addEventListener('click', function(event) {
+        const menuIcon = document.querySelector('.menu-icon');
+        const navbarLinks = document.getElementById('navbar-links');
+        if (!menuIcon.contains(event.target) && !navbarLinks.contains(event.target)) {
+            navbarLinks.classList.remove('show');
+        }
+    });
+</script>
 
 <script>
     alert("JavaScript is running!"); // This should show if the script is loading correctly
@@ -40,6 +58,6 @@
     });
 </script>
 
-
 </body>
 </html>
+
