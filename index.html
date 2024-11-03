@@ -69,6 +69,27 @@
     </div>
 </section>
 
+<section class="testimonials">
+    <h2>Testimonials</h2>
+    <div class="testimonials-container">
+        <button class="scroll-button left" id="testimonial-scroll-left">&lt;</button>
+        <div class="testimonials-grid-wrapper">
+            <div class="testimonials-grid">
+                <div class="testimonial-item"><img src="images/t1.png" alt="Testimonial 1"></div>
+                <div class="testimonial-item"><img src="images/t2.png" alt="Testimonial 2"></div>
+                <div class="testimonial-item"><img src="images/t3.png" alt="Testimonial 3"></div>
+                <div class="testimonial-item"><img src="images/t4.png" alt="Testimonial 4"></div>
+                <div class="testimonial-item"><img src="images/t5.png" alt="Testimonial 5"></div>
+                <div class="testimonial-item"><img src="images/t6.png" alt="Testimonial 6"></div>
+                <div class="testimonial-item"><img src="images/t7.png" alt="Testimonial 7"></div>
+                <div class="testimonial-item"><img src="images/t8.png" alt="Testimonial 8"></div>
+            </div>
+        </div>
+        <button class="scroll-button right" id="testimonial-scroll-right">&gt;</button>
+    </div>
+</section>
+
+
 <!-- Placeholder for footer -->
 <div id="footer"></div> 
 
@@ -188,6 +209,66 @@ galleryGrid.addEventListener('mouseleave', () => {
     }, 3000);
 });
 </script>
+
+<script>
+    // Testimonials Scroll Logic
+    const testimonialsGrid = document.querySelector('.testimonials-grid');
+    const testimonialScrollLeftButton = document.getElementById('testimonial-scroll-left');
+    const testimonialScrollRightButton = document.getElementById('testimonial-scroll-right');
+    const testimonialItems = document.querySelectorAll('.testimonial-item');
+    const testimonialsPerView = 3; // Number of testimonials to display at once
+    const totalTestimonials = testimonialItems.length;
+    let testimonialIndex = 0;
+    
+    // Function to update the testimonials position
+    function updateTestimonials() {
+        const offset = -(testimonialIndex * (100 / testimonialsPerView));
+        testimonialsGrid.style.transform = `translateX(${offset}%)`;
+    }
+    
+    // Scroll left
+    testimonialScrollLeftButton.addEventListener('click', () => {
+        if (testimonialIndex > 0) {
+            testimonialIndex--;
+        } else {
+            testimonialIndex = totalTestimonials - testimonialsPerView;
+        }
+        updateTestimonials();
+    });
+    
+    // Scroll right
+    testimonialScrollRightButton.addEventListener('click', () => {
+        if (testimonialIndex < totalTestimonials - testimonialsPerView) {
+            testimonialIndex++;
+        } else {
+            testimonialIndex = 0;
+        }
+        updateTestimonials();
+    });
+    
+    // Automatic scrolling for testimonials every 3 seconds
+    let testimonialScrollInterval = setInterval(() => {
+        if (testimonialIndex < totalTestimonials - testimonialsPerView) {
+            testimonialIndex++;
+        } else {
+            testimonialIndex = 0;
+        }
+        updateTestimonials();
+    }, 3000);
+    
+    // Pause automatic scrolling on hover
+    testimonialsGrid.addEventListener('mouseenter', () => clearInterval(testimonialScrollInterval));
+    testimonialsGrid.addEventListener('mouseleave', () => {
+        testimonialScrollInterval = setInterval(() => {
+            if (testimonialIndex < totalTestimonials - testimonialsPerView) {
+                testimonialIndex++;
+            } else {
+                testimonialIndex = 0;
+            }
+            updateTestimonials();
+        }, 3000);
+    });
+</script>   
 
 
 </body>
