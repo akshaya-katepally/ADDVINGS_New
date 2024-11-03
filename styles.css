@@ -268,7 +268,7 @@ body {
 .testimonials {
     padding: 50px 20px;
     text-align: center;
-    background-color: #4c4a4a; /* Darker background to distinguish */
+    background-color: #000; /* Darker background to distinguish */
 }
 
 .testimonials h2 {
@@ -315,6 +315,7 @@ body {
 
 /* Clients Section with Scrolling Logos */
 .clients_section {
+    background-color: #ededed;
     padding: 50px 20px;
     text-align: center;
     margin-top: 20px;
